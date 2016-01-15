@@ -1,0 +1,14 @@
+/home/schtu/Desktop/Mau/catoolgui/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/schtu/Desktop/Mau/catoolgui/obj/x86/Debug/catoolgui.gtk-gui.gui.stetic
+/home/schtu/Desktop/Mau/catoolgui/bin/Debug/catoolgui.exe.mdb
+/home/schtu/Desktop/Mau/catoolgui/bin/Debug/catoolgui.exe
+/home/schtu/Desktop/Mau/catoolgui/obj/x86/Debug/catoolgui.exe
+/home/schtu/Desktop/Mau/catoolgui/obj/x86/Debug/catoolgui.exe.mdb
+/home/schtu/Desktop/Mau/catoolgui/bin/Debug/INIFileParser.dll
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Debug/catoolgui.gtk-gui.gui.stetic
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Debug/catoolgui.exe.mdb
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Debug/catoolgui.exe
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Debug/catoolgui.exe
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Debug/catoolgui.exe.mdb
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Debug/INIFileParser.dll

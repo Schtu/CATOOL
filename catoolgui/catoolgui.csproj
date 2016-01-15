@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3FAFED03-5D8A-45E4-9D2D-55EF03145F6D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>catoolgui</RootNamespace>
+    <AssemblyName>catoolgui</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="Mono.TextEditor, Version=1.0.0.0, Culture=neutral">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="INIFileParser">
+      <HintPath>..\packages\ini-parser.2.2.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Data" />
+    <Reference Include="Mono.Data.Sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="firstSetup.cs" />
+    <Compile Include="mainWindow.cs" />
+    <Compile Include="gtk-gui\catoolgui.mainWindow.cs" />
+    <Compile Include="selectCA.cs" />
+    <Compile Include="gtk-gui\catoolgui.selectCA.cs" />
+    <Compile Include="exportCert.cs" />
+    <Compile Include="gtk-gui\catoolgui.exportCert.cs" />
+    <Compile Include="exportCACert.cs" />
+    <Compile Include="gtk-gui\catoolgui.exportCACert.cs" />
+    <Compile Include="revokeCert.cs" />
+    <Compile Include="gtk-gui\catoolgui.revokeCert.cs" />
+    <Compile Include="reqImport.cs" />
+    <Compile Include="gtk-gui\catoolgui.reqImport.cs" />
+    <Compile Include="msgWindow.cs" />
+    <Compile Include="gtk-gui\catoolgui.msgWindow.cs" />
+    <Compile Include="crlScript.cs" />
+    <Compile Include="gtk-gui\catoolgui.crlScript.cs" />
+    <Compile Include="caHandling.cs" />
+    <Compile Include="certParser.cs" />
+    <Compile Include="createCert.cs" />
+    <Compile Include="gtk-gui\catoolgui.createCert.cs" />
+    <Compile Include="createConfigFile.cs" />
+    <Compile Include="createExtFile.cs" />
+    <Compile Include="createNewCA.cs" />
+    <Compile Include="gtk-gui\catoolgui.createNewCA.cs" />
+    <Compile Include="createNewRequest.cs" />
+    <Compile Include="gtk-gui\catoolgui.createNewRequest.cs" />
+    <Compile Include="program.cs" />
+    <Compile Include="regExCases.cs" />
+    <Compile Include="gtk-gui\catoolgui.subjectAltNames.cs" />
+    <Compile Include="gtk-gui\catoolgui.crlExt.cs" />
+    <Compile Include="crlExt.cs" />
+    <Compile Include="gtk-gui\catoolgui.setExtensions.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Properties\packages.config" />
+  </ItemGroup>
+</Project>

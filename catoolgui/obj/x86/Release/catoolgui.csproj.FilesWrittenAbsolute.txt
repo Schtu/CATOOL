@@ -1,0 +1,2 @@
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Release/.NETFramework,Version=v4.5.1.AssemblyAttribute.cs
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Release/INIFileParser.dll
