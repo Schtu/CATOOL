@@ -46,7 +46,7 @@ namespace catoolgui
 				} else {
 					parser.checkValid(mainWindow.selectedCA,certNum);
 					if (!parser.valid.Equals ("R")) {
-						caHandling.revokeCert (mainWindow.selectedCA, certNum, revokeCAPass.Text, "unspecified");
+						caHandling.revokeCert (mainWindow.selectedCA, certNum, revokeCAPass.Text, reasonBox.ActiveText);
 						caHandling.genCRL (mainWindow.selectedCA, revokeCAPass.Text);
 					}
 					deleteCert ();

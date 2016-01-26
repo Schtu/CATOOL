@@ -196,7 +196,7 @@ namespace catoolgui
 			this.mainNotebook = new global::Gtk.Notebook ();
 			this.mainNotebook.Sensitive = false;
 			this.mainNotebook.Name = "mainNotebook";
-			this.mainNotebook.CurrentPage = 2;
+			this.mainNotebook.CurrentPage = 1;
 			this.mainNotebook.EnablePopup = true;
 			// Container child mainNotebook.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
@@ -221,7 +221,7 @@ namespace catoolgui
 			this.vbox3.Name = "vbox3";
 			this.vbox3.Spacing = 6;
 			// Container child vbox3.Gtk.Box+BoxChild
-			this.table5 = new global::Gtk.Table (((uint)(3)), ((uint)(2)), false);
+			this.table5 = new global::Gtk.Table (((uint)(7)), ((uint)(2)), false);
 			this.table5.Name = "table5";
 			this.table5.RowSpacing = ((uint)(6));
 			this.table5.ColumnSpacing = ((uint)(6));
@@ -236,6 +236,9 @@ namespace catoolgui
 			this.reqTreeView.Name = "reqTreeView";
 			this.GtkScrolledWindow1.Add (this.reqTreeView);
 			this.table5.Add (this.GtkScrolledWindow1);
+			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table5 [this.GtkScrolledWindow1]));
+			w13.TopAttach = ((uint)(4));
+			w13.BottomAttach = ((uint)(5));
 			// Container child table5.Gtk.Table+TableChild
 			this.GtkScrolledWindow4 = new global::Gtk.ScrolledWindow ();
 			this.GtkScrolledWindow4.Name = "GtkScrolledWindow4";
@@ -248,6 +251,8 @@ namespace catoolgui
 			this.GtkScrolledWindow4.Add (this.reqInfoTreeView);
 			this.table5.Add (this.GtkScrolledWindow4);
 			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table5 [this.GtkScrolledWindow4]));
+			w15.TopAttach = ((uint)(4));
+			w15.BottomAttach = ((uint)(5));
 			w15.LeftAttach = ((uint)(1));
 			w15.RightAttach = ((uint)(2));
 			this.vbox3.Add (this.table5);
@@ -470,7 +475,7 @@ namespace catoolgui
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 690;
-			this.DefaultHeight = 336;
+			this.DefaultHeight = 392;
 			this.caPage.Hide ();
 			this.reqPage.Hide ();
 			this.cerPage.Hide ();

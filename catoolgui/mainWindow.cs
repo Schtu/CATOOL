@@ -20,8 +20,8 @@ namespace catoolgui
 		selectedCertNum="", selectedCertPath = "",importedReqPath = "", importedReqName="";
 		public int checkCaNum;
 
-		static ListStore  reqStore,certStore;
-		static TreeStore caStore,reqInfoStore,certInfoStore;
+		static ListStore  reqStore,usedreqStore,certStore;
+		static TreeStore caStore,reqInfoStore,usedreqInfoStore,certInfoStore;
 		static TreeViewColumn caCategory,caValues, reqName, reqInfoCat, 
 		reqInfoVal, certName, certNo, certvalid, certInfoCat, certInfoVal;
 	

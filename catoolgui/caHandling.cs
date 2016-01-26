@@ -191,7 +191,7 @@ namespace catoolgui
 		public static void revokeCert(string caName, string certNo, string pass, string reason){
 
 			callProc ("/usr/bin/openssl", "ca -batch -config " + firstSetup.mainDir + "/" + caName + "-ca/openssl.conf " +
-			"-passin pass:" + pass + " -revoke " + firstSetup.mainDir + "/" + caName + "-ca/certs/" + certNo + ".pem" +
+			"-passin pass:" + pass + " -crl_reason " + reason + " -revoke " + firstSetup.mainDir + "/" + caName + "-ca/certs/" + certNo + ".pem" +
 			" -keyfile " + firstSetup.mainDir + "/" + caName + "-ca/private/" + caName + "_ca_privkey.key -cert " +
 			firstSetup.mainDir + "/" + caName + "-ca/" + caName + "-ca_cacert.crt","Certificate Revoked");
 		}

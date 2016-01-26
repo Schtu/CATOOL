@@ -1,6 +1,11 @@
 ﻿<Properties StartupItem="catoolgui/catoolgui.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="catoolgui/createNewCA.cs">
+    <Files>
+      <File FileName="catoolgui/mainWindow.cs" Line="24" Column="58" />
+      <File FileName="catoolgui/createNewCA.cs" Line="202" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
