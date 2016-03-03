@@ -14,8 +14,6 @@ namespace catoolgui
 		
 		private global::Gtk.ComboBox certTypeBox;
 		
-		private global::Gtk.ComboBoxEntry comboboxentry1;
-		
 		private global::Gtk.HButtonBox hbuttonbox2;
 		
 		private global::Gtk.Button addSubjAlt;
@@ -66,7 +64,6 @@ namespace catoolgui
 			w1.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.table1 = new global::Gtk.Table (((uint)(5)), ((uint)(2)), false);
-			this.table1.Name = "table1";
 			this.table1.RowSpacing = ((uint)(6));
 			this.table1.ColumnSpacing = ((uint)(6));
 			// Container child table1.Gtk.Table+TableChild
@@ -83,8 +80,8 @@ namespace catoolgui
 			w2.LeftAttach = ((uint)(1));
 			w2.RightAttach = ((uint)(2));
 			w2.XPadding = ((uint)(10));
-			w2.XOptions = ((global::Gtk.AttachOptions)(0));
-			w2.YOptions = ((global::Gtk.AttachOptions)(0));
+			w2.XOptions = ((global::Gtk.AttachOptions)(4));
+			w2.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.certTypeBox = global::Gtk.ComboBox.NewText ();
 			this.certTypeBox.AppendText (global::Mono.Unix.Catalog.GetString ("Clientcertificate"));
@@ -100,17 +97,6 @@ namespace catoolgui
 			w3.XOptions = ((global::Gtk.AttachOptions)(4));
 			w3.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
-			this.comboboxentry1 = global::Gtk.ComboBoxEntry.NewText ();
-			this.comboboxentry1.Name = "comboboxentry1";
-			this.table1.Add (this.comboboxentry1);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table1 [this.comboboxentry1]));
-			w4.TopAttach = ((uint)(1));
-			w4.BottomAttach = ((uint)(2));
-			w4.LeftAttach = ((uint)(1));
-			w4.RightAttach = ((uint)(2));
-			w4.XOptions = ((global::Gtk.AttachOptions)(4));
-			w4.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
 			this.hbuttonbox2 = new global::Gtk.HButtonBox ();
 			this.hbuttonbox2.Name = "hbuttonbox2";
 			this.hbuttonbox2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(1));
@@ -120,33 +106,33 @@ namespace catoolgui
 			this.addSubjAlt.Name = "addSubjAlt";
 			this.addSubjAlt.UseUnderline = true;
 			this.addSubjAlt.Label = global::Mono.Unix.Catalog.GetString ("Add Entry");
-			global::Gtk.Image w5 = new global::Gtk.Image ();
-			w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.Menu);
-			this.addSubjAlt.Image = w5;
+			global::Gtk.Image w4 = new global::Gtk.Image ();
+			w4.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.Menu);
+			this.addSubjAlt.Image = w4;
 			this.hbuttonbox2.Add (this.addSubjAlt);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.addSubjAlt]));
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.addSubjAlt]));
+			w5.Expand = false;
+			w5.Fill = false;
 			// Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
 			this.subAltremove = new global::Gtk.Button ();
 			this.subAltremove.CanFocus = true;
 			this.subAltremove.Name = "subAltremove";
 			this.subAltremove.UseUnderline = true;
 			this.subAltremove.Label = global::Mono.Unix.Catalog.GetString ("Remove Entry");
-			global::Gtk.Image w7 = new global::Gtk.Image ();
-			w7.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-remove", global::Gtk.IconSize.Menu);
-			this.subAltremove.Image = w7;
+			global::Gtk.Image w6 = new global::Gtk.Image ();
+			w6.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-remove", global::Gtk.IconSize.Menu);
+			this.subAltremove.Image = w6;
 			this.hbuttonbox2.Add (this.subAltremove);
-			global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.subAltremove]));
-			w8.Position = 1;
-			w8.Expand = false;
-			w8.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.subAltremove]));
+			w7.Position = 1;
+			w7.Expand = false;
+			w7.Fill = false;
 			this.table1.Add (this.hbuttonbox2);
-			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.table1 [this.hbuttonbox2]));
-			w9.TopAttach = ((uint)(3));
-			w9.BottomAttach = ((uint)(4));
-			w9.XOptions = ((global::Gtk.AttachOptions)(4));
-			w9.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.table1 [this.hbuttonbox2]));
+			w8.TopAttach = ((uint)(3));
+			w8.BottomAttach = ((uint)(4));
+			w8.XOptions = ((global::Gtk.AttachOptions)(4));
+			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
@@ -154,10 +140,10 @@ namespace catoolgui
 			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Certificate - Type</b>");
 			this.label2.UseMarkup = true;
 			this.table1.Add (this.label2);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1 [this.label2]));
-			w10.XPadding = ((uint)(10));
-			w10.XOptions = ((global::Gtk.AttachOptions)(4));
-			w10.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.table1 [this.label2]));
+			w9.XPadding = ((uint)(10));
+			w9.XOptions = ((global::Gtk.AttachOptions)(4));
+			w9.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.label4 = new global::Gtk.Label ();
 			this.label4.Name = "label4";
@@ -165,12 +151,12 @@ namespace catoolgui
 			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Subject Alternative Names</b>");
 			this.label4.UseMarkup = true;
 			this.table1.Add (this.label4);
-			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1 [this.label4]));
-			w11.TopAttach = ((uint)(1));
-			w11.BottomAttach = ((uint)(2));
-			w11.XPadding = ((uint)(10));
-			w11.XOptions = ((global::Gtk.AttachOptions)(4));
-			w11.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1 [this.label4]));
+			w10.TopAttach = ((uint)(1));
+			w10.BottomAttach = ((uint)(2));
+			w10.XPadding = ((uint)(10));
+			w10.XOptions = ((global::Gtk.AttachOptions)(4));
+			w10.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.label5 = new global::Gtk.Label ();
 			this.label5.Name = "label5";
@@ -178,24 +164,24 @@ namespace catoolgui
 			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>CA Password:</b>");
 			this.label5.UseMarkup = true;
 			this.table1.Add (this.label5);
-			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1 [this.label5]));
-			w12.TopAttach = ((uint)(4));
-			w12.BottomAttach = ((uint)(5));
-			w12.XPadding = ((uint)(10));
-			w12.XOptions = ((global::Gtk.AttachOptions)(4));
-			w12.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1 [this.label5]));
+			w11.TopAttach = ((uint)(4));
+			w11.BottomAttach = ((uint)(5));
+			w11.XPadding = ((uint)(10));
+			w11.XOptions = ((global::Gtk.AttachOptions)(4));
+			w11.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.subjAltBox = global::Gtk.ComboBox.NewText ();
 			this.subjAltBox.Name = "subjAltBox";
 			this.table1.Add (this.subjAltBox);
-			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltBox]));
-			w13.TopAttach = ((uint)(3));
-			w13.BottomAttach = ((uint)(4));
-			w13.LeftAttach = ((uint)(1));
-			w13.RightAttach = ((uint)(2));
-			w13.XPadding = ((uint)(10));
-			w13.XOptions = ((global::Gtk.AttachOptions)(4));
-			w13.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltBox]));
+			w12.TopAttach = ((uint)(3));
+			w12.BottomAttach = ((uint)(4));
+			w12.LeftAttach = ((uint)(1));
+			w12.RightAttach = ((uint)(2));
+			w12.XPadding = ((uint)(10));
+			w12.XOptions = ((global::Gtk.AttachOptions)(4));
+			w12.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.subjAltEntry = new global::Gtk.Entry ();
 			this.subjAltEntry.CanFocus = true;
@@ -203,14 +189,14 @@ namespace catoolgui
 			this.subjAltEntry.IsEditable = true;
 			this.subjAltEntry.InvisibleChar = '•';
 			this.table1.Add (this.subjAltEntry);
-			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltEntry]));
-			w14.TopAttach = ((uint)(2));
-			w14.BottomAttach = ((uint)(3));
-			w14.LeftAttach = ((uint)(1));
-			w14.RightAttach = ((uint)(2));
-			w14.XPadding = ((uint)(10));
-			w14.XOptions = ((global::Gtk.AttachOptions)(4));
-			w14.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltEntry]));
+			w13.TopAttach = ((uint)(2));
+			w13.BottomAttach = ((uint)(3));
+			w13.LeftAttach = ((uint)(1));
+			w13.RightAttach = ((uint)(2));
+			w13.XPadding = ((uint)(10));
+			w13.XOptions = ((global::Gtk.AttachOptions)(4));
+			w13.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.subjAltReason = global::Gtk.ComboBox.NewText ();
 			this.subjAltReason.AppendText (global::Mono.Unix.Catalog.GetString ("eMail"));
@@ -218,19 +204,19 @@ namespace catoolgui
 			this.subjAltReason.AppendText (global::Mono.Unix.Catalog.GetString ("URI"));
 			this.subjAltReason.AppendText (global::Mono.Unix.Catalog.GetString ("DNS"));
 			this.subjAltReason.Name = "subjAltReason";
-			this.subjAltReason.Active = 0;
+			this.subjAltReason.Active = 2;
 			this.table1.Add (this.subjAltReason);
-			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltReason]));
-			w15.TopAttach = ((uint)(2));
-			w15.BottomAttach = ((uint)(3));
-			w15.XPadding = ((uint)(10));
-			w15.XOptions = ((global::Gtk.AttachOptions)(1));
-			w15.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1 [this.subjAltReason]));
+			w14.TopAttach = ((uint)(2));
+			w14.BottomAttach = ((uint)(3));
+			w14.XPadding = ((uint)(10));
+			w14.XOptions = ((global::Gtk.AttachOptions)(1));
+			w14.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.vbox2.Add (this.table1);
-			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.table1]));
-			w16.Position = 1;
-			w16.Expand = false;
-			w16.Fill = false;
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.table1]));
+			w15.Position = 1;
+			w15.Expand = false;
+			w15.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbox3 = new global::Gtk.HBox ();
 			this.hbox3.Name = "hbox3";
@@ -249,9 +235,9 @@ namespace catoolgui
 			this.okCertButton.UseUnderline = true;
 			this.okCertButton.Label = "gtk-ok";
 			this.hbuttonbox3.Add (this.okCertButton);
-			global::Gtk.ButtonBox.ButtonBoxChild w17 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.okCertButton]));
-			w17.Expand = false;
-			w17.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w16 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.okCertButton]));
+			w16.Expand = false;
+			w16.Fill = false;
 			// Container child hbuttonbox3.Gtk.ButtonBox+ButtonBoxChild
 			this.cancelCertButton = new global::Gtk.Button ();
 			this.cancelCertButton.CanFocus = true;
@@ -260,23 +246,23 @@ namespace catoolgui
 			this.cancelCertButton.UseUnderline = true;
 			this.cancelCertButton.Label = "gtk-cancel";
 			this.hbuttonbox3.Add (this.cancelCertButton);
-			global::Gtk.ButtonBox.ButtonBoxChild w18 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.cancelCertButton]));
-			w18.Position = 1;
-			w18.Expand = false;
-			w18.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w17 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.cancelCertButton]));
+			w17.Position = 1;
+			w17.Expand = false;
+			w17.Fill = false;
 			this.hbox3.Add (this.hbuttonbox3);
-			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.hbuttonbox3]));
-			w19.Position = 0;
+			global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.hbuttonbox3]));
+			w18.Position = 0;
 			this.vbox2.Add (this.hbox3);
-			global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
-			w20.Position = 2;
-			w20.Expand = false;
-			w20.Fill = false;
+			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+			w19.Position = 2;
+			w19.Expand = false;
+			w19.Fill = false;
 			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 431;
+			this.DefaultWidth = 451;
 			this.DefaultHeight = 242;
 			this.Show ();
 			this.addSubjAlt.Clicked += new global::System.EventHandler (this.OnaddSubjAltClicked);

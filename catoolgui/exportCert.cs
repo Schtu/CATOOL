@@ -67,21 +67,19 @@ namespace catoolgui
 				 * nicht korrekten Eingabe wird von Openssl eine Errormeldung ausgegeben, welche hier 
 				 * wieder zum prüfen der Korrektheit des Passwortes verwendet wird.*/
 
-				caHandling.checkPass (privPass.Text);
-
-				if (!caHandling.lastLine.Contains ("unable to load Private Key")) {
-					if (!import) {
-
+				if (!import) {
+					caHandling.checkPass (privPass.Text);
+					if (!caHandling.lastLine.Contains ("unable to load Private Key")) {
 						caHandling.exportpkcs12Cert (nameExCert.Text, selectedPath, filechooserbuttonCert.Filename, selectedNum,
 							certPass.Text, privPass.Text, firstSetup.mainDir + "/" + mainWindow.selectedCA + "-ca/certreqs/" +
 						selectedNum + ".key");
 						this.Destroy ();
 					} else {
-						caHandling.exportImportCert (nameExCert.Text, selectedPath, filechooserbuttonCert.Filename);
-						this.Destroy ();
-					}
+						mWin = new msgWindow ("Wrong password for private key", "error");
+					} 
 				} else {
-					mWin = new msgWindow ("Wrong password for private key", "error");
+					caHandling.exportImportCert (nameExCert.Text, selectedPath, filechooserbuttonCert.Filename);
+					this.Destroy ();
 				}
 			} else {
 				mWin = new msgWindow (errList, "error");

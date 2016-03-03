@@ -196,7 +196,7 @@ namespace catoolgui
 			this.mainNotebook = new global::Gtk.Notebook ();
 			this.mainNotebook.Sensitive = false;
 			this.mainNotebook.Name = "mainNotebook";
-			this.mainNotebook.CurrentPage = 1;
+			this.mainNotebook.CurrentPage = 2;
 			this.mainNotebook.EnablePopup = true;
 			// Container child mainNotebook.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
@@ -221,7 +221,7 @@ namespace catoolgui
 			this.vbox3.Name = "vbox3";
 			this.vbox3.Spacing = 6;
 			// Container child vbox3.Gtk.Box+BoxChild
-			this.table5 = new global::Gtk.Table (((uint)(7)), ((uint)(2)), false);
+			this.table5 = new global::Gtk.Table (((uint)(3)), ((uint)(2)), false);
 			this.table5.Name = "table5";
 			this.table5.RowSpacing = ((uint)(6));
 			this.table5.ColumnSpacing = ((uint)(6));
@@ -236,9 +236,6 @@ namespace catoolgui
 			this.reqTreeView.Name = "reqTreeView";
 			this.GtkScrolledWindow1.Add (this.reqTreeView);
 			this.table5.Add (this.GtkScrolledWindow1);
-			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table5 [this.GtkScrolledWindow1]));
-			w13.TopAttach = ((uint)(4));
-			w13.BottomAttach = ((uint)(5));
 			// Container child table5.Gtk.Table+TableChild
 			this.GtkScrolledWindow4 = new global::Gtk.ScrolledWindow ();
 			this.GtkScrolledWindow4.Name = "GtkScrolledWindow4";
@@ -251,8 +248,6 @@ namespace catoolgui
 			this.GtkScrolledWindow4.Add (this.reqInfoTreeView);
 			this.table5.Add (this.GtkScrolledWindow4);
 			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table5 [this.GtkScrolledWindow4]));
-			w15.TopAttach = ((uint)(4));
-			w15.BottomAttach = ((uint)(5));
 			w15.LeftAttach = ((uint)(1));
 			w15.RightAttach = ((uint)(2));
 			this.vbox3.Add (this.table5);
@@ -262,8 +257,8 @@ namespace catoolgui
 			this.hbuttonbox2 = new global::Gtk.HButtonBox ();
 			this.hbuttonbox2.Name = "hbuttonbox2";
 			this.hbuttonbox2.Spacing = 10;
-			this.hbuttonbox2.BorderWidth = ((uint)(6));
-			this.hbuttonbox2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(3));
+			this.hbuttonbox2.BorderWidth = ((uint)(3));
+			this.hbuttonbox2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(1));
 			// Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
 			this.importButton = new global::Gtk.Button ();
 			this.importButton.CanFocus = true;
@@ -316,7 +311,7 @@ namespace catoolgui
 			// Notebook tab
 			this.reqPage = new global::Gtk.Label ();
 			this.reqPage.Name = "reqPage";
-			this.reqPage.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>CA  - Requests</b>");
+			this.reqPage.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Imported Requests</b>");
 			this.reqPage.UseMarkup = true;
 			this.mainNotebook.SetTabLabel (this.vbox3, this.reqPage);
 			this.reqPage.ShowAll ();
@@ -361,7 +356,7 @@ namespace catoolgui
 			this.hbuttonbox4 = new global::Gtk.HButtonBox ();
 			this.hbuttonbox4.Name = "hbuttonbox4";
 			this.hbuttonbox4.Spacing = 10;
-			this.hbuttonbox4.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(3));
+			this.hbuttonbox4.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(1));
 			// Container child hbuttonbox4.Gtk.ButtonBox+ButtonBoxChild
 			this.createCert2 = new global::Gtk.Button ();
 			this.createCert2.CanFocus = true;
@@ -423,6 +418,7 @@ namespace catoolgui
 			this.vbox2.Add (this.hbuttonbox4);
 			global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbuttonbox4]));
 			w38.Position = 1;
+			w38.Expand = false;
 			w38.Fill = false;
 			this.mainNotebook.Add (this.vbox2);
 			global::Gtk.Notebook.NotebookChild w39 = ((global::Gtk.Notebook.NotebookChild)(this.mainNotebook [this.vbox2]));
@@ -430,7 +426,7 @@ namespace catoolgui
 			// Notebook tab
 			this.cerPage = new global::Gtk.Label ();
 			this.cerPage.Name = "cerPage";
-			this.cerPage.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>CA - Certificates</b>");
+			this.cerPage.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Certificates</b>");
 			this.cerPage.UseMarkup = true;
 			this.mainNotebook.SetTabLabel (this.vbox2, this.cerPage);
 			this.cerPage.ShowAll ();
@@ -475,7 +471,7 @@ namespace catoolgui
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 690;
-			this.DefaultHeight = 392;
+			this.DefaultHeight = 414;
 			this.caPage.Hide ();
 			this.reqPage.Hide ();
 			this.cerPage.Hide ();
