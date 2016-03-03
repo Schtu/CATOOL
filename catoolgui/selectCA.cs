@@ -5,19 +5,20 @@ namespace catoolgui
 {
 	public partial class selectCA : Gtk.Dialog
 	{
-		Action  loadCA,loadReq, loadCert, loadLabel;
+		Action  loadCA,loadReq, loadCert, loadLabel, setNoteBook;
 		String reason;
 
 
 		/*Lademethoden des mainWindoe werden als Action übergeben und bei der Auswahl einer CA ausgeführt.
 		 * Außerdem werden alle erstellten CA in eine Auswahlbox geladen*/
 
-		public selectCA (string input,Action caAction, Action reqAction, Action certAction, Action labelCA) 
+		public selectCA (string input,Action caAction, Action reqAction, Action certAction, Action labelCA, Action notebook) 
 		{
 			loadCA = caAction;
 			loadReq = reqAction;
 			loadCert = certAction;
 			loadLabel = labelCA;
+			setNoteBook = notebook;
 			reason = input;
 			this.Build ();
 			readDB ();
@@ -72,6 +73,7 @@ namespace catoolgui
 					mainWindow.clearCertStore ();
 					mainWindow.selectedCA = "";
 					loadLabel ();
+					setNoteBook ();
 				} else {
 					mainWindow.deleteCA ();
 				}

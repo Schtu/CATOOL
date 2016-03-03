@@ -63,12 +63,12 @@ namespace catoolgui
 					this.sigAlgo = (match.Groups ["sigAlgo"].Value);
 
 					match = Regex.Match (s, @"Issuer: C=(?<iCountry>.*), ST=(?<istate>.*?)(, L=(?<ilocal>.*))?, O=(?<iorga>.*?)(, OU=(?<iorgaUnit>.*))?, CN=(?<icommonName>.*)");
-					this.iCountry = (replaceHex((match.Groups ["iCountry"].Value)));
-					this.istate = (replaceHex((match.Groups ["istate"].Value)));
-					this.ilocal = (replaceHex((match.Groups ["ilocal"].Value)));
-					this.iorga = (replaceHex((match.Groups ["iorga"].Value)));
-					this.iorgaUnit = (replaceHex((match.Groups ["iorgaUnit"].Value)));
-					this.icommonName = (replaceHex((match.Groups ["icommonName"].Value)));
+					this.iCountry = match.Groups ["iCountry"].Value;
+					this.istate = match.Groups ["istate"].Value;
+					this.ilocal = match.Groups ["ilocal"].Value;
+					this.iorga = match.Groups ["iorga"].Value;
+					this.iorgaUnit = match.Groups ["iorgaUnit"].Value;
+					this.icommonName = match.Groups ["icommonName"].Value;
 
 					match = Regex.Match (s, @"Not Before: (?<notBefore>.*)");
 					this.notBefore = (match.Groups ["notBefore"].Value);
@@ -79,15 +79,15 @@ namespace catoolgui
 					match = Regex.Match (s, @"Public Key Algorithm: (?<pubKeyAlgo>.*)");
 					this.pubKeyAlgo = (match.Groups ["pubKeyAlgo"].Value);
 					match = Regex.Match (s, @"Subject: C=(?<sCountry>.*), ST=(?<sstate>.*?)(, L=(?<slocal>.*))?, O=(?<sorga>.*?)(, OU=(?<sorgaUnit>.*))?, CN=(?<scommonName>.*)");
-					this.sCountry = (replaceHex((match.Groups ["sCountry"].Value)));
-					this.sstate = (replaceHex((match.Groups ["sstate"].Value)));
-					this.slocal = (replaceHex((match.Groups ["slocal"].Value)));
-					this.sorga = (replaceHex((match.Groups ["sorga"].Value)));
-					this.sorgaUnit = (replaceHex((match.Groups ["sorgaUnit"].Value)));
-					this.scommonName = (replaceHex((match.Groups ["scommonName"].Value)));
+					this.sCountry = match.Groups ["sCountry"].Value;
+					this.sstate = match.Groups ["sstate"].Value;
+					this.slocal = match.Groups ["slocal"].Value;
+					this.sorga = match.Groups ["sorga"].Value;
+					this.sorgaUnit = match.Groups ["sorgaUnit"].Value;
+					this.scommonName = match.Groups ["scommonName"].Value;
 				}
 			} else {
-				mWin = new msgWindow ("Path does not exist", "error");
+				mWin = new msgWindow ("PARSER: Path does not exist", "error");
 			}
 		}
 
@@ -103,15 +103,6 @@ namespace catoolgui
 				Match match = Regex.Match (s, @"(?<valid>[V|E|R]).*"+serial);
 				this.valid = ((match.Groups ["valid"].Value));
 			}
-		}
-
-		/* Sonderzeichen wie ä,ö,ü usw. werden durch Hexcodierung durch Openssl in den jeweiligen
-		 * Zertifikaten dargestelt (z.Bsp. /x../x..). Diese Funktion dient zur Umkodierung für die
-		 * Darstellung der String im jeweiligen Programmteil*/
-
-		public string replaceHex(string input){
-
-			return Regex.Replace(input, @"\\x(?<a>[A-F0-9]{2})\\x(?<b>[A-F0-9]{2})", m =>Encoding.GetEncoding("UTF-8").GetString(new Byte[] { Convert.ToByte(m.Groups["a"].Value,16),Convert.ToByte(m.Groups["b"].Value,16)}));
 		}
 	}
 }

@@ -29,7 +29,7 @@ namespace catoolgui
 				createNewCA.crlList.Add ("crlDistributionPoints = URI:" + crlURIEntry.Text);
 				crlURIEntry.IsEditable = false;
 				crlURL = crlURIEntry.Text;
-				crlLabel.Text = "<b>URL added</b>";
+				crlLabel.Text = "URL added";
 				crlDel.Sensitive = true;
 				crlAdd.Sensitive = false;
 

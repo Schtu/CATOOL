@@ -41,19 +41,12 @@ namespace catoolgui
 				
 			//Prüfe ob bereits CA's vorhanden sind anhand eines count()
 
-			using (SqliteConnection con = new SqliteConnection ("Data Source=" + firstSetup.mainDir + "/caDB.sqlite")) {
-				con.Open ();
-				string stm = "SELECT count(caName) FROM CA";
-				using (SqliteCommand cmd = new SqliteCommand (stm, con)) {
-					checkCaNum = Convert.ToInt32 (cmd.ExecuteScalar ());
-				}
-				con.Close ();
-			}
+			checkCACount ();
 
 			//Wenn ja, kann beim Programm eine dieser CA's ausgewählt werden
 
 			if (checkCaNum > 0) {
-				sWin = new selectCA ("open",stateLoadCA,stateLoadReq,stateLoadCert,setLabel);
+				sWin = new selectCA ("open",stateLoadCA,stateLoadReq,stateLoadCert,setLabel,setNoteBookFalse);
 			}
 
 			//Lege die einzelnen Tree-/Liststores und deren Spalten zur Darstellung der CA, Reqs. und Certs. an.
@@ -231,6 +224,23 @@ namespace catoolgui
 			selCA.Text = "";
 		}
 
+		public void setNoteBookFalse(){
+			mainNotebook.Sensitive = false;
+			exportCA.Sensitive = false;
+			publishCRL.Sensitive = false;
+		}
+
+		public void checkCACount(){
+			using (SqliteConnection con = new SqliteConnection ("Data Source=" + firstSetup.mainDir + "/caDB.sqlite")) {
+				con.Open ();
+				string stm = "SELECT count(caName) FROM CA";
+				using (SqliteCommand cmd = new SqliteCommand (stm, con)) {
+					checkCaNum = Convert.ToInt32 (cmd.ExecuteScalar ());
+				}
+				con.Close ();
+			}
+		}
+
 		//Löschfunktionen
 
 		public static void deleteCA(){
@@ -281,24 +291,88 @@ namespace catoolgui
 			caWin = new createNewCA (stateLoadCA);
 		}
 
+		protected void OnViewLogfileActionActivated (object sender, EventArgs e)
+		{
+			viewLog logWin = new viewLog ();
+		}
+
+		protected void OnExitActionActivated (object sender, EventArgs e)
+		{
+			MainClass.terminateApp ();
+		}
+			
+		protected void OnCAActionActivated (object sender, EventArgs e)
+		{
+			checkCACount ();
+
+			if (checkCaNum < 1) {
+				DeleteCAAction.Sensitive = false;
+				OpenCAAction.Sensitive = false;
+				CloseCAAction.Sensitive = false;
+			} else {
+				DeleteCAAction.Sensitive = true;
+				OpenCAAction.Sensitive = true;
+				CloseCAAction.Sensitive = true;
+			}
+
+			if (selectedCA.Equals ("")) {
+				CloseCAAction.Sensitive = false;
+				ExportCACertAction.Sensitive = false;
+			} else {
+				CloseCAAction.Sensitive = true;
+				ExportCACertAction.Sensitive = true;
+			}
+		}
+
 		protected void OnNewCAActionActivated (object sender, EventArgs e)
 		{
 			caWin = new createNewCA (stateLoadCA);
 		}
 
+
 		//GUI-Funktion zum löschen von CA's
 
 		protected void OnDeleteCAActionActivated (object sender, EventArgs e)
 		{
-			sWin = new selectCA ("delete",stateLoadCA,stateLoadReq,stateLoadCert,setLabel);
+			sWin = new selectCA ("delete",stateLoadCA,stateLoadReq,stateLoadCert,setLabel,setNoteBookFalse);
 		}
 			
 		//GUI-Funktion zum Laden von CA's
 
 		protected void OnOpenCAActionActivated (object sender, EventArgs e)
 		{
-			sWin = new selectCA ("open",stateLoadCA,stateLoadReq,stateLoadCert,setLabel);
+			sWin = new selectCA ("open",stateLoadCA,stateLoadReq,stateLoadCert,setLabel,setNoteBookFalse);
 		}
+
+		protected void OnCloseCAActionActivated (object sender, EventArgs e)
+		{
+			mainWindow.clearCAStore ();
+			mainWindow.clearREQStore ();
+			mainWindow.clearCertStore ();
+			mainWindow.selectedCA = "";
+			setLabel ();
+			setNoteBookFalse ();
+		}
+
+		protected void OnExportCACertActionActivated (object sender, EventArgs e)
+		{
+			excaWin = new exportCACert ();
+		}
+
+		protected void OnCRLActionActivated (object sender, EventArgs e)
+		{
+			if (selectedCA.Equals ("")) {
+				PublishCRLAction.Sensitive = false;
+			} else {
+				PublishCRLAction.Sensitive = true;
+			}
+		}
+
+		protected void OnPublishCRLActionActivated (object sender, EventArgs e)
+		{
+			crlWin = new crlScript ();
+		}
+			
 
 		//Öffne Exportdialog für CA's
 
@@ -307,9 +381,11 @@ namespace catoolgui
 			excaWin = new exportCACert ();
 		}
 
-		protected void OnExitActionActivated (object sender, EventArgs e)
+		//Öffne Dialog zur Veröffentlichung der CRL
+
+		protected void OnPublishCRLClicked (object sender, EventArgs e)
 		{
-			MainClass.terminateApp ();
+			crlWin = new crlScript ();
 		}
 			
 		//GUI-Funktion zum erstellen eines neuen Zertifikates
@@ -366,14 +442,7 @@ namespace catoolgui
 		{
 			rWin = new createNewRequest (selectedCA, stateLoadCert, importedReqPath);
 		}
-
-		//Öffne Dialog zur Veröffentlichung der CRL
-
-		protected void OnPublishCRLClicked (object sender, EventArgs e)
-		{
-			crlWin = new crlScript ();
-		}
-
+			
 		//Bestimme ausgewählten importierten Request aus dem reqStore
 
 		protected void OnReqTreeViewCursorChanged (object sender, EventArgs e)

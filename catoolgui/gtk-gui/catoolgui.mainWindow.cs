@@ -6,6 +6,12 @@ namespace catoolgui
 	{
 		private global::Gtk.UIManager UIManager;
 		
+		private global::Gtk.Action ProgramAction;
+		
+		private global::Gtk.Action ViewLogfileAction;
+		
+		private global::Gtk.Action ExitAction;
+		
 		private global::Gtk.Action CAAction;
 		
 		private global::Gtk.Action NewCAAction;
@@ -14,15 +20,17 @@ namespace catoolgui
 		
 		private global::Gtk.Action OpenCAAction;
 		
-		private global::Gtk.Action ExitAction;
+		private global::Gtk.Action CloseCAAction;
 		
-		private global::Gtk.Action ProgramAction;
+		private global::Gtk.Action ExportCACertAction;
 		
-		private global::Gtk.Action ExitAction1;
+		private global::Gtk.Action CRLAction;
+		
+		private global::Gtk.Action PublishCRLAction;
 		
 		private global::Gtk.VBox vbox1;
 		
-		private global::Gtk.MenuBar menubar2;
+		private global::Gtk.MenuBar menubar1;
 		
 		private global::Gtk.HButtonBox mainButtons;
 		
@@ -98,8 +106,17 @@ namespace catoolgui
 			// Widget catoolgui.mainWindow
 			this.UIManager = new global::Gtk.UIManager ();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+			this.ProgramAction = new global::Gtk.Action ("ProgramAction", global::Mono.Unix.Catalog.GetString ("Program"), null, null);
+			this.ProgramAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Program");
+			w1.Add (this.ProgramAction, null);
+			this.ViewLogfileAction = new global::Gtk.Action ("ViewLogfileAction", global::Mono.Unix.Catalog.GetString ("View Logfile"), null, null);
+			this.ViewLogfileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("View Logfile");
+			w1.Add (this.ViewLogfileAction, null);
+			this.ExitAction = new global::Gtk.Action ("ExitAction", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
+			this.ExitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
+			w1.Add (this.ExitAction, null);
 			this.CAAction = new global::Gtk.Action ("CAAction", global::Mono.Unix.Catalog.GetString ("CA"), null, null);
-			this.CAAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
+			this.CAAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("CA");
 			w1.Add (this.CAAction, null);
 			this.NewCAAction = new global::Gtk.Action ("NewCAAction", global::Mono.Unix.Catalog.GetString ("New CA"), null, null);
 			this.NewCAAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("New CA");
@@ -110,15 +127,18 @@ namespace catoolgui
 			this.OpenCAAction = new global::Gtk.Action ("OpenCAAction", global::Mono.Unix.Catalog.GetString ("Open CA"), null, null);
 			this.OpenCAAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Open CA");
 			w1.Add (this.OpenCAAction, null);
-			this.ExitAction = new global::Gtk.Action ("ExitAction", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
-			this.ExitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
-			w1.Add (this.ExitAction, null);
-			this.ProgramAction = new global::Gtk.Action ("ProgramAction", global::Mono.Unix.Catalog.GetString ("Program"), null, null);
-			this.ProgramAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Program");
-			w1.Add (this.ProgramAction, null);
-			this.ExitAction1 = new global::Gtk.Action ("ExitAction1", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
-			this.ExitAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
-			w1.Add (this.ExitAction1, null);
+			this.CloseCAAction = new global::Gtk.Action ("CloseCAAction", global::Mono.Unix.Catalog.GetString ("Close CA"), null, null);
+			this.CloseCAAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Close CA");
+			w1.Add (this.CloseCAAction, null);
+			this.ExportCACertAction = new global::Gtk.Action ("ExportCACertAction", global::Mono.Unix.Catalog.GetString ("Export CA Cert."), null, null);
+			this.ExportCACertAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Export CA Cert.");
+			w1.Add (this.ExportCACertAction, null);
+			this.CRLAction = new global::Gtk.Action ("CRLAction", global::Mono.Unix.Catalog.GetString ("CRL"), null, null);
+			this.CRLAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("CRL");
+			w1.Add (this.CRLAction, null);
+			this.PublishCRLAction = new global::Gtk.Action ("PublishCRLAction", global::Mono.Unix.Catalog.GetString ("Publish CRL"), null, null);
+			this.PublishCRLAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Publish CRL");
+			w1.Add (this.PublishCRLAction, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "catoolgui.mainWindow";
@@ -130,11 +150,11 @@ namespace catoolgui
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='ProgramAction' action='ProgramAction'><menuitem name='ExitAction1' action='ExitAction1'/></menu><menu name='CAAction' action='CAAction'><menuitem name='NewCAAction' action='NewCAAction'/><menuitem name='DeleteCAAction' action='DeleteCAAction'/><menuitem name='OpenCAAction' action='OpenCAAction'/></menu></menubar></ui>");
-			this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
-			this.menubar2.Name = "menubar2";
-			this.vbox1.Add (this.menubar2);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.menubar2]));
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='ProgramAction' action='ProgramAction'><menuitem name='ViewLogfileAction' action='ViewLogfileAction'/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='CAAction' action='CAAction'><menuitem name='NewCAAction' action='NewCAAction'/><menuitem name='DeleteCAAction' action='DeleteCAAction'/><menuitem name='OpenCAAction' action='OpenCAAction'/><menuitem name='CloseCAAction' action='CloseCAAction'/><menuitem name='ExportCACertAction' action='ExportCACertAction'/></menu><menu name='CRLAction' action='CRLAction'><menuitem name='PublishCRLAction' action='PublishCRLAction'/></menu></menubar></ui>");
+			this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
+			this.menubar1.Name = "menubar1";
+			this.vbox1.Add (this.menubar1);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.menubar1]));
 			w2.Position = 0;
 			w2.Expand = false;
 			w2.Fill = false;
@@ -196,7 +216,7 @@ namespace catoolgui
 			this.mainNotebook = new global::Gtk.Notebook ();
 			this.mainNotebook.Sensitive = false;
 			this.mainNotebook.Name = "mainNotebook";
-			this.mainNotebook.CurrentPage = 2;
+			this.mainNotebook.CurrentPage = 1;
 			this.mainNotebook.EnablePopup = true;
 			// Container child mainNotebook.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
@@ -477,11 +497,15 @@ namespace catoolgui
 			this.cerPage.Hide ();
 			this.CAlabel.Hide ();
 			this.Show ();
+			this.ViewLogfileAction.Activated += new global::System.EventHandler (this.OnViewLogfileActionActivated);
+			this.ExitAction.Activated += new global::System.EventHandler (this.OnExitActionActivated);
 			this.NewCAAction.Activated += new global::System.EventHandler (this.OnNewCAActionActivated);
 			this.DeleteCAAction.Activated += new global::System.EventHandler (this.OnDeleteCAActionActivated);
 			this.OpenCAAction.Activated += new global::System.EventHandler (this.OnOpenCAActionActivated);
-			this.ExitAction.Activated += new global::System.EventHandler (this.OnExitActionActivated);
-			this.ExitAction1.Activated += new global::System.EventHandler (this.OnExitActionActivated);
+			this.CloseCAAction.Activated += new global::System.EventHandler (this.OnCloseCAActionActivated);
+			this.ExportCACertAction.Activated += new global::System.EventHandler (this.OnExportCACertActionActivated);
+			this.CRLAction.Activated += new global::System.EventHandler (this.OnCRLActionActivated);
+			this.PublishCRLAction.Activated += new global::System.EventHandler (this.OnPublishCRLActionActivated);
 			this.createCAButton.Clicked += new global::System.EventHandler (this.OnCreateCAButtonClicked);
 			this.exportCA.Clicked += new global::System.EventHandler (this.OnExportCAClicked);
 			this.publishCRL.Clicked += new global::System.EventHandler (this.OnPublishCRLClicked);

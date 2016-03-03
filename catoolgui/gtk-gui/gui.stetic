@@ -816,308 +816,29 @@ sha512</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="catoolgui.subjectAltNames" design-size="425 200">
-    <property name="MemberName" />
-    <property name="Title" translatable="yes">SubjectAltNames</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <property name="Modal">True</property>
-    <child>
-      <widget class="Gtk.Table" id="table2">
-        <property name="MemberName" />
-        <property name="NRows">5</property>
-        <property name="NColumns">3</property>
-        <property name="RowSpacing">6</property>
-        <property name="ColumnSpacing">6</property>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <widget class="Gtk.ComboBox" id="combobox">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-          </widget>
-          <packing>
-            <property name="TopAttach">3</property>
-            <property name="BottomAttach">4</property>
-            <property name="LeftAttach">1</property>
-            <property name="RightAttach">2</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entry">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="TopAttach">2</property>
-            <property name="BottomAttach">3</property>
-            <property name="LeftAttach">1</property>
-            <property name="RightAttach">2</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HButtonBox" id="hbuttonbox3">
-            <property name="MemberName" />
-            <property name="Size">1</property>
-            <child>
-              <widget class="Gtk.Button" id="subjAltAdd">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="UseStock">True</property>
-                <property name="Type">StockItem</property>
-                <property name="StockId">gtk-add</property>
-                <signal name="Clicked" handler="OnSubjAltAddClicked" />
-                <property name="label">gtk-add</property>
-              </widget>
-              <packing>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="TopAttach">2</property>
-            <property name="BottomAttach">3</property>
-            <property name="LeftAttach">2</property>
-            <property name="RightAttach">3</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">True</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HButtonBox" id="hbuttonbox4">
-            <property name="MemberName" />
-            <property name="Size">2</property>
-            <child>
-              <widget class="Gtk.Button" id="subjAltOK">
-                <property name="MemberName" />
-                <property name="Sensitive">False</property>
-                <property name="CanFocus">True</property>
-                <property name="UseStock">True</property>
-                <property name="Type">StockItem</property>
-                <property name="StockId">gtk-ok</property>
-                <signal name="Clicked" handler="OnSubjAltOKClicked" />
-                <property name="label">gtk-ok</property>
-              </widget>
-              <packing>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="subjAltCancel">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="UseStock">True</property>
-                <property name="Type">StockItem</property>
-                <property name="StockId">gtk-cancel</property>
-                <signal name="Clicked" handler="OnSubjAltCancelClicked" />
-                <property name="label">gtk-cancel</property>
-              </widget>
-              <packing>
-                <property name="Position">1</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="TopAttach">4</property>
-            <property name="BottomAttach">5</property>
-            <property name="LeftAttach">2</property>
-            <property name="RightAttach">3</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">True</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HButtonBox" id="hbuttonbox5">
-            <property name="MemberName" />
-            <property name="Size">1</property>
-            <child>
-              <widget class="Gtk.Button" id="subjAltRemove">
-                <property name="MemberName" />
-                <property name="Sensitive">False</property>
-                <property name="CanFocus">True</property>
-                <property name="UseStock">True</property>
-                <property name="Type">StockItem</property>
-                <property name="StockId">gtk-remove</property>
-                <signal name="Clicked" handler="OnSubjAltRemoveClicked" />
-                <property name="label">gtk-remove</property>
-              </widget>
-              <packing>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="TopAttach">3</property>
-            <property name="BottomAttach">4</property>
-            <property name="LeftAttach">2</property>
-            <property name="RightAttach">3</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">True</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label3">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">&lt;b&gt;Subject Alternative Names&lt;/b&gt;</property>
-            <property name="UseMarkup">True</property>
-          </widget>
-          <packing>
-            <property name="LeftAttach">1</property>
-            <property name="RightAttach">2</property>
-            <property name="YPadding">20</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label5">
-            <property name="MemberName" />
-            <property name="Xalign">0</property>
-            <property name="LabelProp" translatable="yes">Add all entrys to the Cert?</property>
-          </widget>
-          <packing>
-            <property name="TopAttach">4</property>
-            <property name="BottomAttach">5</property>
-            <property name="LeftAttach">1</property>
-            <property name="RightAttach">2</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="reasonLabel">
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="TopAttach">2</property>
-            <property name="BottomAttach">3</property>
-            <property name="XPadding">20</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBox" id="subjAltReason">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes">eMail
-IP
-URI
-DNS</property>
-            <property name="Active">0</property>
-          </widget>
-          <packing>
-            <property name="TopAttach">1</property>
-            <property name="BottomAttach">2</property>
-            <property name="LeftAttach">1</property>
-            <property name="RightAttach">2</property>
-            <property name="XPadding">10</property>
-            <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
-            <property name="XFill">True</property>
-            <property name="XShrink">False</property>
-            <property name="YExpand">False</property>
-            <property name="YFill">True</property>
-            <property name="YShrink">False</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-  </widget>
   <widget class="Gtk.Window" id="catoolgui.mainWindow" design-size="690 414">
     <action-group name="Default">
+      <action id="ProgramAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Program</property>
+        <property name="ShortLabel" translatable="yes">Program</property>
+      </action>
+      <action id="ViewLogfileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">View Logfile</property>
+        <property name="ShortLabel" translatable="yes">View Logfile</property>
+        <signal name="Activated" handler="OnViewLogfileActionActivated" />
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <signal name="Activated" handler="OnExitActionActivated" />
+      </action>
       <action id="CAAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">CA</property>
-        <property name="ShortLabel" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">CA</property>
       </action>
       <action id="NewCAAction">
         <property name="Type">Action</property>
@@ -1137,22 +858,29 @@ DNS</property>
         <property name="ShortLabel" translatable="yes">Open CA</property>
         <signal name="Activated" handler="OnOpenCAActionActivated" />
       </action>
-      <action id="ExitAction">
+      <action id="CloseCAAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Exit</property>
-        <property name="ShortLabel" translatable="yes">Exit</property>
-        <signal name="Activated" handler="OnExitActionActivated" />
+        <property name="Label" translatable="yes">Close CA</property>
+        <property name="ShortLabel" translatable="yes">Close CA</property>
+        <signal name="Activated" handler="OnCloseCAActionActivated" />
       </action>
-      <action id="ProgramAction">
+      <action id="ExportCACertAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Program</property>
-        <property name="ShortLabel" translatable="yes">Program</property>
+        <property name="Label" translatable="yes">Export CA Cert.</property>
+        <property name="ShortLabel" translatable="yes">Export CA Cert.</property>
+        <signal name="Activated" handler="OnExportCACertActionActivated" />
       </action>
-      <action id="ExitAction1">
+      <action id="CRLAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Exit</property>
-        <property name="ShortLabel" translatable="yes">Exit</property>
-        <signal name="Activated" handler="OnExitActionActivated" />
+        <property name="Label" translatable="yes">CRL</property>
+        <property name="ShortLabel" translatable="yes">CRL</property>
+        <signal name="Activated" handler="OnCRLActionActivated" />
+      </action>
+      <action id="PublishCRLAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Publish CRL</property>
+        <property name="ShortLabel" translatable="yes">Publish CRL</property>
+        <signal name="Activated" handler="OnPublishCRLActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -1164,16 +892,22 @@ DNS</property>
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.MenuBar" id="menubar2">
+          <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-            <node name="menubar2" type="Menubar">
+            <node name="__gtksharp_82_Stetic_Editor_ActionMenuBar" type="Menubar">
               <node type="Menu" action="ProgramAction">
-                <node type="Menuitem" action="ExitAction1" />
+                <node type="Menuitem" action="ViewLogfileAction" />
+                <node type="Menuitem" action="ExitAction" />
               </node>
               <node type="Menu" action="CAAction">
                 <node type="Menuitem" action="NewCAAction" />
                 <node type="Menuitem" action="DeleteCAAction" />
                 <node type="Menuitem" action="OpenCAAction" />
+                <node type="Menuitem" action="CloseCAAction" />
+                <node type="Menuitem" action="ExportCACertAction" />
+              </node>
+              <node type="Menu" action="CRLAction">
+                <node type="Menuitem" action="PublishCRLAction" />
               </node>
             </node>
           </widget>
@@ -1252,7 +986,7 @@ DNS</property>
           <widget class="Gtk.Notebook" id="mainNotebook">
             <property name="MemberName" />
             <property name="Sensitive">False</property>
-            <property name="CurrentPage">2</property>
+            <property name="CurrentPage">1</property>
             <property name="EnablePopup">True</property>
             <child>
               <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
@@ -3863,243 +3597,56 @@ certificateHold</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="catoolgui.setExtensions" design-size="436 162">
+  <widget class="Gtk.Dialog" id="catoolgui.viewLog" design-size="738 497">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">SetExtensions</property>
-    <property name="WindowPosition">Center</property>
-    <property name="Modal">True</property>
-    <property name="Resizable">False</property>
-    <property name="AllowGrow">False</property>
-    <child>
-      <widget class="Gtk.VBox" id="vbox1">
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Buttons">1</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog1_VBox">
         <property name="MemberName" />
-        <property name="Spacing">6</property>
+        <property name="BorderWidth">2</property>
         <child>
-          <widget class="Gtk.Table" id="table1">
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
             <property name="MemberName" />
-            <property name="NRows">4</property>
-            <property name="NColumns">3</property>
-            <property name="RowSpacing">6</property>
-            <property name="ColumnSpacing">6</property>
+            <property name="ShadowType">In</property>
             <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <widget class="Gtk.HButtonBox" id="crlButtonBox">
-                <property name="MemberName" />
-                <property name="Visible">False</property>
-                <property name="Size">2</property>
-                <property name="LayoutStyle">Start</property>
-                <child>
-                  <widget class="Gtk.Button" id="crlAdd">
-                    <property name="MemberName" />
-                    <property name="CanFocus">True</property>
-                    <property name="UseStock">True</property>
-                    <property name="Type">StockItem</property>
-                    <property name="StockId">gtk-add</property>
-                    <signal name="Clicked" handler="OnCrlAddClicked" />
-                    <property name="label">gtk-add</property>
-                  </widget>
-                  <packing>
-                    <property name="Expand">False</property>
-                    <property name="Fill">False</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Button" id="crlDel">
-                    <property name="MemberName" />
-                    <property name="CanFocus">True</property>
-                    <property name="UseStock">True</property>
-                    <property name="Type">StockItem</property>
-                    <property name="StockId">gtk-remove</property>
-                    <signal name="Clicked" handler="OnCrlDelClicked" />
-                    <property name="label">gtk-remove</property>
-                  </widget>
-                  <packing>
-                    <property name="Position">1</property>
-                    <property name="Expand">False</property>
-                    <property name="Fill">False</property>
-                  </packing>
-                </child>
-              </widget>
-              <packing>
-                <property name="TopAttach">1</property>
-                <property name="BottomAttach">2</property>
-                <property name="LeftAttach">2</property>
-                <property name="RightAttach">3</property>
-                <property name="AutoSize">False</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Entry" id="crlDays">
+              <widget class="Gtk.TextView" id="logView">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Text" translatable="yes">30</property>
-                <property name="IsEditable">True</property>
-                <property name="InvisibleChar">•</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Editable">False</property>
+                <property name="Text" translatable="yes" />
               </widget>
-              <packing>
-                <property name="TopAttach">3</property>
-                <property name="BottomAttach">4</property>
-                <property name="LeftAttach">2</property>
-                <property name="RightAttach">3</property>
-                <property name="XPadding">10</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Entry" id="crlDistPoint">
-                <property name="MemberName" />
-                <property name="Visible">False</property>
-                <property name="CanFocus">True</property>
-                <property name="IsEditable">True</property>
-                <property name="InvisibleChar">•</property>
-              </widget>
-              <packing>
-                <property name="TopAttach">1</property>
-                <property name="BottomAttach">2</property>
-                <property name="LeftAttach">1</property>
-                <property name="RightAttach">2</property>
-                <property name="XPadding">10</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Label" id="crlLabel">
-                <property name="MemberName" />
-                <property name="Visible">False</property>
-                <property name="LabelProp" translatable="yes">&lt;b&gt;Specify CRL Location&lt;/b&gt;</property>
-                <property name="UseMarkup">True</property>
-              </widget>
-              <packing>
-                <property name="LeftAttach">1</property>
-                <property name="RightAttach">2</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Label" id="crlStateLabel">
-                <property name="MemberName" />
-              </widget>
-              <packing>
-                <property name="TopAttach">2</property>
-                <property name="BottomAttach">3</property>
-                <property name="LeftAttach">2</property>
-                <property name="RightAttach">3</property>
-                <property name="XPadding">10</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Label" id="crlValidLabel">
-                <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">&lt;b&gt;CRL Valid Period (Days)&lt;/b&gt;</property>
-                <property name="UseMarkup">True</property>
-              </widget>
-              <packing>
-                <property name="TopAttach">3</property>
-                <property name="BottomAttach">4</property>
-                <property name="LeftAttach">1</property>
-                <property name="RightAttach">2</property>
-                <property name="XPadding">10</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
             </child>
           </widget>
           <packing>
             <property name="Position">0</property>
             <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
           </packing>
         </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+        <property name="MemberName" />
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">1</property>
+        <property name="LayoutStyle">Spread</property>
         <child>
-          <widget class="Gtk.HButtonBox" id="hbuttonbox1">
+          <widget class="Gtk.Button" id="buttonCancel">
             <property name="MemberName" />
-            <property name="BorderWidth">6</property>
-            <property name="Size">1</property>
-            <property name="LayoutStyle">Spread</property>
-            <child>
-              <widget class="Gtk.Button" id="closeButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextAndIcon</property>
-                <property name="Icon">stock:gtk-close Menu</property>
-                <property name="Label" translatable="yes">Close</property>
-                <signal name="Clicked" handler="OnCloseButtonClicked" />
-              </widget>
-              <packing>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-no Menu</property>
+            <property name="Label" translatable="yes">Close</property>
+            <property name="UseUnderline">True</property>
+            <property name="ResponseId">-7</property>
+            <signal name="Clicked" handler="OnButtonCancelClicked" />
           </widget>
           <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>

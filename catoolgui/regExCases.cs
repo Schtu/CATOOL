@@ -9,11 +9,11 @@ namespace catoolgui
 		/*Da die Expressions in mehreren Fenstern/Dialogen Verwendung finden werden sie in dieser 
 		 * Klasse für alle zugänglich gemacht*/
 	
-		public static string commonRegex = @"(^[a-zA-Z0-9\s\-\&\.\:\\äöüÄÖÜß]+$)";
+		public static string commonRegex = @"(^[a-zA-Z0-9\s\-\&\.\:\\]+$)";
 		public static string storageRegex = @"(^[a-zA-Z0-9]+$)";
 		public static string countryRegex = @"([A-Za-z]{2})";
 		public static string passRegex = @".{4,}";
-		public static string stateRegex = @"(^[A-Za-z\s\-äöüÄÖÜß]+$)";
+		public static string stateRegex = @"(^[A-Za-z\s\-]+$)";
 		public static string dnsRegex = @"^(([a-zA-Z0-9\*]|[a-zA-Z0-9\*][a-zA-Z0-9\-]*[a-zA-Z0-9\*])\.)*([A-Za-z0-9\*]|[A-Za-z0-9\*][A-Za-z0-9\-\*]*[A-Za-z0-9\*])$";
 		public static string emailRegex = @"^[A-Za-z!#$%&'*+\-/=?\^_`{|}~]+(\.[A-Za-z!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" +
 			@"((([\-A-Za-z]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";

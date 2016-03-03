@@ -112,10 +112,10 @@
     <Compile Include="gtk-gui\catoolgui.createNewRequest.cs" />
     <Compile Include="program.cs" />
     <Compile Include="regExCases.cs" />
-    <Compile Include="gtk-gui\catoolgui.subjectAltNames.cs" />
     <Compile Include="gtk-gui\catoolgui.crlExt.cs" />
     <Compile Include="crlExt.cs" />
-    <Compile Include="gtk-gui\catoolgui.setExtensions.cs" />
+    <Compile Include="viewLog.cs" />
+    <Compile Include="gtk-gui\catoolgui.viewLog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
