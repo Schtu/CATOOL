@@ -15,6 +15,7 @@ namespace catoolgui
 			global::Stetic.Gui.Initialize (this);
 			// Widget catoolgui.viewLog
 			this.Name = "catoolgui.viewLog";
+			this.Title = global::Mono.Unix.Catalog.GetString ("Logfile");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child catoolgui.viewLog.VBox
 			global::Gtk.VBox w1 = this.VBox;

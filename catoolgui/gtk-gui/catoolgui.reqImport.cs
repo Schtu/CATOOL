@@ -15,6 +15,7 @@ namespace catoolgui
 			global::Stetic.Gui.Initialize (this);
 			// Widget catoolgui.reqImport
 			this.Name = "catoolgui.reqImport";
+			this.Title = global::Mono.Unix.Catalog.GetString ("Import Request");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child catoolgui.reqImport.VBox
 			global::Gtk.VBox w1 = this.VBox;

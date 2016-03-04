@@ -15,7 +15,7 @@
     <property name="CanDefault">True</property>
     <property name="HasDefault">True</property>
     <property name="CanFocus">True</property>
-    <property name="Title" translatable="yes">CreateNewCA</property>
+    <property name="Title" translatable="yes">Create New CA</property>
     <property name="WindowPosition">CenterAlways</property>
     <property name="Modal">True</property>
     <property name="Gravity">Center</property>
@@ -839,6 +839,7 @@ sha512</property>
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">CA</property>
         <property name="ShortLabel" translatable="yes">CA</property>
+        <signal name="Activated" handler="OnCAActionActivated" />
       </action>
       <action id="NewCAAction">
         <property name="Type">Action</property>
@@ -849,6 +850,7 @@ sha512</property>
       <action id="DeleteCAAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Delete CA</property>
+        <property name="Sensitive">False</property>
         <property name="ShortLabel" translatable="yes">Delete CA</property>
         <signal name="Activated" handler="OnDeleteCAActionActivated" />
       </action>
@@ -861,12 +863,14 @@ sha512</property>
       <action id="CloseCAAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Close CA</property>
+        <property name="Sensitive">False</property>
         <property name="ShortLabel" translatable="yes">Close CA</property>
         <signal name="Activated" handler="OnCloseCAActionActivated" />
       </action>
       <action id="ExportCACertAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Export CA Cert.</property>
+        <property name="Sensitive">False</property>
         <property name="ShortLabel" translatable="yes">Export CA Cert.</property>
         <signal name="Activated" handler="OnExportCACertActionActivated" />
       </action>
@@ -881,6 +885,31 @@ sha512</property>
         <property name="Label" translatable="yes">Publish CRL</property>
         <property name="ShortLabel" translatable="yes">Publish CRL</property>
         <signal name="Activated" handler="OnPublishCRLActionActivated" />
+      </action>
+      <action id="RequestAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes"> Request</property>
+        <property name="ShortLabel" translatable="yes"> Request</property>
+        <signal name="Activated" handler="OnRequestActionActivated" />
+      </action>
+      <action id="ImportRequestAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Import Request</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">Import Request</property>
+        <signal name="Activated" handler="OnImportRequestActionActivated" />
+      </action>
+      <action id="CertificateAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Certificate</property>
+        <property name="ShortLabel" translatable="yes">Certificate</property>
+        <signal name="Activated" handler="OnCertificateActionActivated" />
+      </action>
+      <action id="NewCertAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">New Cert.</property>
+        <property name="ShortLabel" translatable="yes">New Cert.</property>
+        <signal name="Activated" handler="OnNewCertActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -908,6 +937,12 @@ sha512</property>
               </node>
               <node type="Menu" action="CRLAction">
                 <node type="Menuitem" action="PublishCRLAction" />
+              </node>
+              <node type="Menu" action="RequestAction">
+                <node type="Menuitem" action="ImportRequestAction" />
+              </node>
+              <node type="Menu" action="CertificateAction">
+                <node type="Menuitem" action="NewCertAction" />
               </node>
             </node>
           </widget>
@@ -1116,6 +1151,7 @@ sha512</property>
                     <child>
                       <widget class="Gtk.Button" id="deleteimportedReq">
                         <property name="MemberName" />
+                        <property name="Sensitive">False</property>
                         <property name="CanFocus">True</property>
                         <property name="Type">TextAndIcon</property>
                         <property name="Icon">stock:gtk-delete Menu</property>
@@ -1469,7 +1505,7 @@ sha512</property>
     <property name="CanDefault">True</property>
     <property name="HasDefault">True</property>
     <property name="CanFocus">True</property>
-    <property name="Title" translatable="yes" />
+    <property name="Title" translatable="yes">Certificate Creation - Step 1: Request</property>
     <property name="WindowPosition">CenterAlways</property>
     <property name="Modal">True</property>
     <property name="AllowShrink">True</property>
@@ -2177,7 +2213,7 @@ aes256</property>
   </widget>
   <widget class="Gtk.Window" id="catoolgui.createCert" design-size="451 242">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">CreateCert</property>
+    <property name="Title" translatable="yes">Certificate Creation - Step 2: Extensions</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Modal">True</property>
     <child>
@@ -2935,6 +2971,7 @@ Certificate (optional)&lt;/b&gt;</property>
   </widget>
   <widget class="Gtk.Dialog" id="catoolgui.revokeCert" design-size="400 129">
     <property name="MemberName" />
+    <property name="Title" translatable="yes">Revoke Certificate</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Buttons">2</property>
     <property name="HelpButton">False</property>
@@ -3104,6 +3141,7 @@ certificateHold</property>
   </widget>
   <widget class="Gtk.Dialog" id="catoolgui.reqImport" design-size="194 74">
     <property name="MemberName" />
+    <property name="Title" translatable="yes">Import Request</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Buttons">2</property>
     <property name="HelpButton">False</property>
@@ -3599,6 +3637,7 @@ certificateHold</property>
   </widget>
   <widget class="Gtk.Dialog" id="catoolgui.viewLog" design-size="738 497">
     <property name="MemberName" />
+    <property name="Title" translatable="yes">Logfile</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Buttons">1</property>
     <property name="HelpButton">False</property>

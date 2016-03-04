@@ -75,7 +75,7 @@ namespace catoolgui
 			this.CanDefault = true;
 			this.CanFocus = true;
 			this.Name = "catoolgui.createNewRequest";
-			this.Title = "";
+			this.Title = global::Mono.Unix.Catalog.GetString ("Certificate Creation - Step 1: Request");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(3));
 			this.Modal = true;
 			this.AllowShrink = true;

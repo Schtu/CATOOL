@@ -45,7 +45,7 @@ namespace catoolgui
 			global::Stetic.Gui.Initialize (this);
 			// Widget catoolgui.createCert
 			this.Name = "catoolgui.createCert";
-			this.Title = global::Mono.Unix.Catalog.GetString ("CreateCert");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Certificate Creation - Step 2: Extensions");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.Modal = true;
 			// Container child catoolgui.createCert.Gtk.Container+ContainerChild

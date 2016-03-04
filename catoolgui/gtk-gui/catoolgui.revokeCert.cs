@@ -23,6 +23,7 @@ namespace catoolgui
 			global::Stetic.Gui.Initialize (this);
 			// Widget catoolgui.revokeCert
 			this.Name = "catoolgui.revokeCert";
+			this.Title = global::Mono.Unix.Catalog.GetString ("Revoke Certificate");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child catoolgui.revokeCert.VBox
 			global::Gtk.VBox w1 = this.VBox;

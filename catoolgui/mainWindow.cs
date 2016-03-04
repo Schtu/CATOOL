@@ -281,6 +281,8 @@ namespace catoolgui
 				con.Close ();
 				clearREQStore ();
 				stateLoadReq ();
+				deleteimportedReq.Sensitive = false;
+				createCertfromReqButton.Sensitive = false;
 			}
 		}
 			
@@ -308,19 +310,19 @@ namespace catoolgui
 			if (checkCaNum < 1) {
 				DeleteCAAction.Sensitive = false;
 				OpenCAAction.Sensitive = false;
-				CloseCAAction.Sensitive = false;
 			} else {
 				DeleteCAAction.Sensitive = true;
 				OpenCAAction.Sensitive = true;
-				CloseCAAction.Sensitive = true;
 			}
 
 			if (selectedCA.Equals ("")) {
 				CloseCAAction.Sensitive = false;
 				ExportCACertAction.Sensitive = false;
+				CloseCAAction.Sensitive = false;
 			} else {
 				CloseCAAction.Sensitive = true;
 				ExportCACertAction.Sensitive = true;
+				CloseCAAction.Sensitive = true;
 			}
 		}
 
@@ -373,6 +375,33 @@ namespace catoolgui
 			crlWin = new crlScript ();
 		}
 			
+		protected void OnRequestActionActivated (object sender, EventArgs e)
+		{
+			if (selectedCA.Equals ("")) {
+				ImportRequestAction.Sensitive = false;
+			} else {
+				ImportRequestAction.Sensitive = true;
+			}
+		}
+
+		protected void OnCertificateActionActivated (object sender, EventArgs e)
+		{
+			if (selectedCA.Equals ("")) {
+				NewCertAction.Sensitive = false;
+			} else {
+				NewCertAction.Sensitive = true;
+			}
+		}
+
+		protected void OnNewCertActionActivated (object sender, EventArgs e)
+		{
+			rWin = new createNewRequest (selectedCA, stateLoadCert);
+		}
+
+		protected void OnImportRequestActionActivated (object sender, EventArgs e)
+		{
+			imWin = new reqImport (stateLoadReq);
+		}
 
 		//Öffne Exportdialog für CA's
 
@@ -454,6 +483,7 @@ namespace catoolgui
 			if(selection.GetSelected(out model, out iter)){
 
 				createCertfromReqButton.Sensitive = true;
+				deleteimportedReq.Sensitive = true;
 
 				/*Lese anhand des Pfads des importieren Request Informationen aus, lade diese in den Parser
 				 * und stelle sie im ReqInfoStore dar*/

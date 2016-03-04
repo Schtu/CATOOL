@@ -83,7 +83,7 @@ namespace catoolgui
 			this.CanDefault = true;
 			this.CanFocus = true;
 			this.Name = "catoolgui.createNewCA";
-			this.Title = global::Mono.Unix.Catalog.GetString ("CreateNewCA");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Create New CA");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(3));
 			this.Modal = true;
 			this.Gravity = ((global::Gdk.Gravity)(5));
