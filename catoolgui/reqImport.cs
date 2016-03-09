@@ -40,6 +40,7 @@ namespace catoolgui
 				mainWindow.clearREQStore ();
 				mainWindow.clearREQInfoStore ();
 				reqLoad ();
+				mWin = new msgWindow("Request: " + getFilename() + " imported","succes");
 				this.Destroy ();
 			} else {
 				mWin = new msgWindow ("No Request for import selected", "error");

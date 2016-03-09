@@ -89,7 +89,9 @@ namespace catoolgui
 			} else {
 				mWin = new msgWindow ("PARSER: Path does not exist", "error");
 			}
+			
 		}
+		
 
 		/* Da die Information ob ein Zertifikat gültig ist oder widerrufen wurde nicht im 
 		 * Zertifikat selber, sondern in der index.txt der jeweiligen CA aufgeführt wird,

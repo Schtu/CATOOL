@@ -37,7 +37,6 @@ namespace catoolgui
 		protected void OnRunScriptClicked (object sender, EventArgs e)
 		{
 			if (scriptChooser.Filename != null) {
-				Console.WriteLine (scriptChooser.Filename);
 				caHandling.runScript (scriptChooser.Filename);
 			} else {
 				mWin = new msgWindow ("Please select a valid Path","error");

@@ -8,10 +8,14 @@ namespace catoolgui
 	{
 		static string homeFolder = Environment.GetEnvironmentVariable ("HOME");
 		public static string mainDir;
+		public static msgWindow mWin;
 
 		//Erstelle Hauptverzeichniss des Programms, falss dieses noch nicht existiert
 
 		public static void createMainDir(string mainFolder){
+
+			try{
+				
 			if (!Directory.Exists (homeFolder + "/" + mainFolder)) {
 				mainDir = homeFolder + "/" + mainFolder;
 				Directory.CreateDirectory (homeFolder + "/" + mainFolder);
@@ -24,12 +28,16 @@ namespace catoolgui
 				mainDir = homeFolder + "/" + mainFolder;				
 				return;
 			}
+			}
+			catch(IOException ioex){
+				mWin = new msgWindow (ioex.Message, "error");
+			}
 		}
 			
 		//Erstelle eine Sqlite-Datei und erstelle die möglichen Tabellen 
 
 		public static void createDB(string filename,string sql){
-
+			try{
 			SqliteConnection.CreateFile (filename);
 
 			using (SqliteConnection con = new SqliteConnection ("Data Source=" + filename)) {
@@ -39,6 +47,10 @@ namespace catoolgui
 					cmd.ExecuteNonQuery ();
 				}
 				con.Close ();
+			}
+			}
+			catch(SqliteException sqlex){
+				mWin = new msgWindow (sqlex.Message, "error");
 			}
 		}
 	}

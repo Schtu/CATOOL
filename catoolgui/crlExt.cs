@@ -35,7 +35,8 @@ namespace catoolgui
 
 			}
 			else{
-				mWin = new msgWindow("URI in CRLDistributionpoint not valid","error");
+				mWin = new msgWindow("URI in CRLDistributionpoint not valid\n\n " +
+					"Example: (http|https|ftp)://www.example.com","error");
 				return;
 			}
 		}
@@ -57,8 +58,8 @@ namespace catoolgui
 		protected void OnCrlWinCloseClicked (object sender, EventArgs e)
 		{
 			if (Regex.IsMatch (crlDays.Text, regExCases.validRegex)) {
-				this.Destroy ();
 				createNewCA.crlDays = crlDays.Text;
+				this.Destroy ();
 			} else {
 				mWin = new msgWindow ("Entry: Days must contain 1 up to 4 decimal numbers", "error");
 			}

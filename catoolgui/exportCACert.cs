@@ -36,6 +36,8 @@ namespace catoolgui
 
 			if (errList.Count == 0) {
 				caHandling.exportCaCert (mainWindow.selectedCA,caCertChooser.Filename + "/" + caCertExportEntry.Text + ".pem");
+				mWin = new msgWindow ("CA-Certificate: " + caCertExportEntry.Text + " exported to \n " +
+				"path: " + caCertChooser.Filename, "succes");
 				this.Destroy ();
 			} else {
 				mWin = new msgWindow (errList, "error");

@@ -20,6 +20,16 @@ namespace catoolgui
 		public static void writeFile(List<string> extlist, string usage){
 			certType = usage;
 			List<string> list = extlist.Distinct ().ToList ();
+			List<string> subjAltList = new List<string> ();
+
+			if (extlist.Count () > 0 && extlist.Count != null) {
+				Console.WriteLine ("drin");
+				subjAltList.Add ("subjectAltName = @alt_names");
+				subjAltList.Add ("[ alt_names ]");
+
+			}
+
+			subjAltList.AddRange (list);
 
 			caHandling.callProc("/usr/bin/touch", firstSetup.mainDir + "/temp.ext", "Extension File created");
 
@@ -42,7 +52,7 @@ namespace catoolgui
 				
 			//Setze SubjectAltNames
 
-			foreach (var i in list) {
+			foreach (var i in subjAltList) {
 				swriter.WriteLine (i);
 			}
 			swriter.Close ();

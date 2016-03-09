@@ -226,7 +226,11 @@ namespace catoolgui
 
 		public static void checkPass(string pass){
 			callProc("/usr/bin/openssl","rsa -in " + firstSetup.mainDir + "/" + mainWindow.selectedCA +
-				"-ca/private/" + mainWindow.selectedCA + "_ca_privkey.key -check -passin pass:" + pass + " -noout", "readkey");
+				"-ca/private/" + mainWindow.selectedCA + "_ca_privkey.key -check -passin pass:" + pass + " -noout", "readkey CA");
+		}
+
+		public static void checkCertPass(string path, string pass){
+			callProc("/usr/bin/openssl","rsa -in " + path +" -check -passin pass:" + pass + " -noout", "readkey Cert");
 		}
 
 		//Funktion zur Ausführung eines Bash Scripts

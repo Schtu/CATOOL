@@ -159,6 +159,7 @@ namespace catoolgui
 						reqState.Text,reqLocality.Text,reqOrga.Text,reqOrgaUnit.Text);
 						insertReq(serial);
 							cWin = new createCert(certLoad,firstSetup.mainDir + "/" +  mainWindow.selectedCA +"-ca/certreqs/"+serial+".csr",reqName.Text,reqeMail.Text);
+							Console.WriteLine(reqeMail.Text);
 							this.Destroy();
 						}
 

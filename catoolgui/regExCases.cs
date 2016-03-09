@@ -9,7 +9,7 @@ namespace catoolgui
 		/*Da die Expressions in mehreren Fenstern/Dialogen Verwendung finden werden sie in dieser 
 		 * Klasse für alle zugänglich gemacht*/
 	
-		public static string commonRegex = @"(^[a-zA-Z0-9\s\-\&\.\:\\]+$)";
+		public static string commonRegex = @"(^[a-zA-Z0-9\s\-\&\.\:\\\/]+$)";
 		public static string storageRegex = @"(^[a-zA-Z0-9]+$)";
 		public static string countryRegex = @"([A-Za-z]{2})";
 		public static string passRegex = @".{4,}";

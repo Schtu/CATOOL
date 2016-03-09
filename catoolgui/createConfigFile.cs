@@ -32,7 +32,7 @@ namespace catoolgui
 			parsedData ["CA_default"].AddKey ("serial", "$dir/serial");
 			parsedData ["CA_default"].AddKey ("crldir", "$dir/crl");
 			parsedData ["CA_default"].AddKey ("crlnumber", "$dir/crlnumber");
-			parsedData ["CA_default"].AddKey ("crl", "$dir/" + name + "-ca_crl.crl");
+			parsedData ["CA_default"].AddKey ("crl", "$dir/" + name + "-ca.crl");
 
 			parsedData ["CA_default"].AddKey ("utf8", "yes");
 			parsedData ["CA_default"].AddKey ("string_mask", "utf8only");
@@ -45,6 +45,7 @@ namespace catoolgui
 			parsedData ["CA_default"].AddKey ("default_md", digest);
 			parsedData ["CA_default"].AddKey ("preserve", "no");
 			parsedData ["CA_default"].AddKey ("policy", "policy_match");
+			parsedData ["CA_default"].AddKey ("unique_subject", "no");
 
 			parsedData.Sections.AddSection ("policy_match");
 			parsedData ["policy_match"].AddKey ("countryName", "optional");

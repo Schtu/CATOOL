@@ -438,7 +438,7 @@ namespace catoolgui
 		protected void OnDelCertClicked (object sender, EventArgs e)
 		{
 			if (!selectedCertNum.Equals ("")) {
-				rvWin = new catoolgui.revokeCert (selectedCertPath, selectedCertNum, stateLoadCert, true);
+				rvWin = new catoolgui.revokeCert (selectedCertPath, selectedCertNum, selectedCert,stateLoadCert, true);
 			}
 		}
 
@@ -455,7 +455,7 @@ namespace catoolgui
 		protected void OnRevokeCertClicked (object sender, EventArgs e)
 		{
 			if (!selectedCertPath.Equals (""))
-				rvWin = new revokeCert (selectedCertPath,selectedCertNum,stateLoadCert,false);
+				rvWin = new revokeCert (selectedCertPath,selectedCertNum,selectedCert,stateLoadCert,false);
 		}
 
 		//Öffne Importdialog für Requests

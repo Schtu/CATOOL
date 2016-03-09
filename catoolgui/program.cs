@@ -11,7 +11,7 @@ namespace catoolgui
 
 			//Lege Ordnerstruktur für das Programm an, wenn nicht bereits vorhanden
 
-			firstSetup.createMainDir ("MYCATOOL");
+			firstSetup.createMainDir ("CompactCA");
 
 			mainWindow w = new mainWindow ();
 			Application.Run ();

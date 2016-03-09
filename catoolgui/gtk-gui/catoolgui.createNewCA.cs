@@ -226,7 +226,7 @@ namespace catoolgui
 			this.KeySizeBoxCA.AppendText (global::Mono.Unix.Catalog.GetString ("2048"));
 			this.KeySizeBoxCA.AppendText (global::Mono.Unix.Catalog.GetString ("4096"));
 			this.KeySizeBoxCA.Name = "KeySizeBoxCA";
-			this.KeySizeBoxCA.Active = 1;
+			this.KeySizeBoxCA.Active = 0;
 			this.table1.Add (this.KeySizeBoxCA);
 			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1 [this.KeySizeBoxCA]));
 			w11.TopAttach = ((uint)(13));

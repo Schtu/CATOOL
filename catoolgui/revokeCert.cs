@@ -5,17 +5,18 @@ namespace catoolgui
 {
 	public partial class revokeCert : Gtk.Dialog
 	{
-		string certPath="", certNum ="", caPass="";
+		string certPath="", certNum ="", caPass="", certName="";
 		Action certLoad;
 		msgWindow mWin;
 		bool delCert=false;
 		certParser parser = new certParser();
 
-		public revokeCert (string path, string num, Action certAction, bool delete)
+		public revokeCert (string path, string num, string name, Action certAction, bool delete)
 		{
 			this.Build ();
 			certPath = path;
 			certNum = num;
+			certName = name;
 			certLoad = certAction;
 			delCert = delete;
 			if (delCert) {
@@ -42,12 +43,16 @@ namespace catoolgui
 					mainWindow.clearCertStore ();
 					mainWindow.clearInfoCertStore ();
 					certLoad ();
+					mWin = new msgWindow ("Certificate: " + certName + " revoked \n" +
+						"with Reason:" + reasonBox.ActiveText,"success");
 					this.Destroy ();
 				} else {
 					parser.checkValid(mainWindow.selectedCA,certNum);
 					if (!parser.valid.Equals ("R")) {
 						caHandling.revokeCert (mainWindow.selectedCA, certNum, revokeCAPass.Text, reasonBox.ActiveText);
 						caHandling.genCRL (mainWindow.selectedCA, revokeCAPass.Text);
+						mWin = new msgWindow ("Certificate: " + certName + " revoked \n" +
+							"with Reason:" + reasonBox.ActiveText,"success");
 					}
 					deleteCert ();
 					mainWindow.clearCertStore ();

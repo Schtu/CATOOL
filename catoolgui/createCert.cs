@@ -33,8 +33,8 @@ namespace catoolgui
 			subjMail = mail;
 
 			if (!subjMail.Equals ("")) {
-				prepSubjAlt ();
 				extList.Add ("email.0 =" + mail);
+				hasMail = true;
 			}
 
 			//Lösche altes temporäres Extensionfile
@@ -59,8 +59,8 @@ namespace catoolgui
 			subjMail = mail;
 
 			if (!subjMail.Equals ("")) {
-				prepSubjAlt ();
 				extList.Add ("email.0 =" + mail);
+				hasMail = true;
 			}
 			
 			caHandling.callProc ("/bin/rm",firstSetup.mainDir + "/temp.ext", "Extension File removed");
@@ -77,9 +77,9 @@ namespace catoolgui
 				if (hasMail) {
 					extList.AddRange (genAltNames ("email", mailList, 1));
 				} else {
-					prepSubjAlt ();
 					extList.AddRange (genAltNames ("email", mailList, 0));
 				}
+					
 				extList.AddRange (genAltNames ("DNS", dnsList,0));
 				extList.AddRange (genAltNames ("URI", uriList,0));
 				extList.AddRange (genAltNames ("IP", ipList, 0));
@@ -114,6 +114,8 @@ namespace catoolgui
 					} catch (SqliteException ex) {
 						mWin = new msgWindow (ex.Message, "error");
 					}
+
+					mWin = new msgWindow ("Certificate: " + storageName + " signed", "succes");
 
 					//Aktualisiere Certstore im Mainwindow
 
@@ -162,13 +164,7 @@ namespace catoolgui
 				con.Close ();
 			}
 		}
-
-		public static void prepSubjAlt(){
-			extList.Add ("subjectAltName = @alt_names");
-			extList.Add ("[ alt_names ]");
-			hasMail = true;
-		}
-
+			
 		protected void OnaddSubjAltClicked (object sender, EventArgs e)
 		{
 			switch (subjAltReason.ActiveText) {

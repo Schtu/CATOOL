@@ -68,17 +68,22 @@ namespace catoolgui
 				 * wieder zum prüfen der Korrektheit des Passwortes verwendet wird.*/
 
 				if (!import) {
-					caHandling.checkPass (privPass.Text);
+					caHandling.checkCertPass (firstSetup.mainDir + "/" + mainWindow.selectedCA + "-ca/certreqs/" +
+						selectedNum + ".key", privPass.Text);
 					if (!caHandling.lastLine.Contains ("unable to load Private Key")) {
 						caHandling.exportpkcs12Cert (nameExCert.Text, selectedPath, filechooserbuttonCert.Filename, selectedNum,
 							certPass.Text, privPass.Text, firstSetup.mainDir + "/" + mainWindow.selectedCA + "-ca/certreqs/" +
 						selectedNum + ".key");
+						mWin = new msgWindow ("CA-Certificate: " + nameExCert.Text + " exported to \n " +
+							"path: " + filechooserbuttonCert.Filename, "succes");
 						this.Destroy ();
 					} else {
 						mWin = new msgWindow ("Wrong password for private key", "error");
 					} 
 				} else {
 					caHandling.exportImportCert (nameExCert.Text, selectedPath, filechooserbuttonCert.Filename);
+					mWin = new msgWindow ("CA-Certificate: " + nameExCert.Text + " exported to \n " +
+						"path: " + filechooserbuttonCert.Filename, "succes");
 					this.Destroy ();
 				}
 			} else {
