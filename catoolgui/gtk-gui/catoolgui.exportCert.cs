@@ -148,7 +148,7 @@ namespace catoolgui
 			this.privPassLabel = new global::Gtk.Label ();
 			this.privPassLabel.Name = "privPassLabel";
 			this.privPassLabel.Xalign = 0F;
-			this.privPassLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Password Privkey</b>");
+			this.privPassLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Password Privkey (Certificate)</b>");
 			this.privPassLabel.UseMarkup = true;
 			this.table3.Add (this.privPassLabel);
 			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.table3 [this.privPassLabel]));
@@ -197,7 +197,7 @@ namespace catoolgui
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 444;
+			this.DefaultWidth = 486;
 			this.DefaultHeight = 222;
 			this.Show ();
 			this.buttonCancel.Clicked += new global::System.EventHandler (this.OnButtonCancelClicked);

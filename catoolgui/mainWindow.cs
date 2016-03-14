@@ -419,13 +419,6 @@ namespace catoolgui
 			
 		//GUI-Funktion zum erstellen eines neuen Zertifikates
 
-		protected void OnCreateCertButtonClicked (object sender, EventArgs e)
-		{
-			rWin = new createNewRequest (selectedCA,stateLoadCert);
-		}
-
-		//GUI-Funktion zum erstellen eines neuen Zertifikates aus einem importierten Request
-
 		protected void OnCreateCert2Clicked (object sender, EventArgs e)
 		{
 			rWin = new createNewRequest (selectedCA,stateLoadCert);
@@ -508,8 +501,6 @@ namespace catoolgui
 						reqInfoIter = reqInfoStore.AppendValues ("Security Data");
 						reqInfoStore.AppendValues (reqInfoIter, "Signature Algorithm", parser.sigAlgo);
 						reqInfoStore.AppendValues (reqInfoIter, "Pub. Key Algorithm", parser.pubKeyAlgo);
-						reqInfoStore.AppendValues (reqInfoIter, "Valid from", parser.notBefore);
-						reqInfoStore.AppendValues (reqInfoIter, "Valid until", parser.notAfter);
 					}
 					con.Close ();
 				}

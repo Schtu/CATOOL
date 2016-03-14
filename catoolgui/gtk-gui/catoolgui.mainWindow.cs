@@ -240,7 +240,7 @@ namespace catoolgui
 			this.mainNotebook = new global::Gtk.Notebook ();
 			this.mainNotebook.Sensitive = false;
 			this.mainNotebook.Name = "mainNotebook";
-			this.mainNotebook.CurrentPage = 1;
+			this.mainNotebook.CurrentPage = 2;
 			this.mainNotebook.EnablePopup = true;
 			// Container child mainNotebook.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();

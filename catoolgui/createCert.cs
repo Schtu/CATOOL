@@ -16,7 +16,7 @@ namespace catoolgui
 		List<string> ipList = new List<string> ();
 		msgWindow mWin;
 		public static string serial="",reqPath="",storageName="",subjMail="";
-		public static bool isImport, hasMail=false;
+		public static bool isImport=false, hasMail=false;
 		Action certLoad;
 		Dictionary<string,string> importInfo = new Dictionary<string, string> ();
 
