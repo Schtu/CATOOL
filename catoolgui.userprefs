@@ -1,6 +1,11 @@
 ﻿<Properties StartupItem="catoolgui/catoolgui.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="catoolgui/genCRL.cs">
+    <Files>
+      <File FileName="catoolgui/genCRL.cs" Line="36" Column="2" />
+      <File FileName="catoolgui/mainWindow.cs" Line="383" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

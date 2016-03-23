@@ -15,6 +15,7 @@ namespace catoolgui
 		exportCACert excaWin;
 		reqImport imWin;
 		crlScript crlWin;
+		genCRL crlGenWin;
 		static revokeCert rvWin;
 		public static String selectedCA="", deletedCA = "",  selectedCert = "",
 		selectedCertNum="", selectedCertPath = "",importedReqPath = "", importedReqName="";
@@ -365,14 +366,21 @@ namespace catoolgui
 		{
 			if (selectedCA.Equals ("")) {
 				PublishCRLAction.Sensitive = false;
+				GenerateCRL.Sensitive = false;
 			} else {
 				PublishCRLAction.Sensitive = true;
+				GenerateCRL.Sensitive = true;
 			}
 		}
 
 		protected void OnPublishCRLActionActivated (object sender, EventArgs e)
 		{
 			crlWin = new crlScript ();
+		}
+
+		protected void OnGenerateCRLActivated (object sender, EventArgs e)
+		{
+			crlGenWin = new genCRL ();
 		}
 			
 		protected void OnRequestActionActivated (object sender, EventArgs e)

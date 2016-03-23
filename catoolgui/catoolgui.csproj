@@ -108,6 +108,8 @@
     <Compile Include="crlExt.cs" />
     <Compile Include="viewLog.cs" />
     <Compile Include="gtk-gui\catoolgui.viewLog.cs" />
+    <Compile Include="genCRL.cs" />
+    <Compile Include="gtk-gui\catoolgui.genCRL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

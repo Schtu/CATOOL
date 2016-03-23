@@ -298,6 +298,7 @@ namespace catoolgui
 			w18.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.reqCipherBox = global::Gtk.ComboBox.NewText ();
+			this.reqCipherBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes128"));
 			this.reqCipherBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes192"));
 			this.reqCipherBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes256"));
 			this.reqCipherBox.Name = "reqCipherBox";

@@ -94,6 +94,7 @@ namespace catoolgui
 			this.table1.ColumnSpacing = ((uint)(6));
 			// Container child table1.Gtk.Table+TableChild
 			this.cipherAlgoBox = global::Gtk.ComboBox.NewText ();
+			this.cipherAlgoBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes128"));
 			this.cipherAlgoBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes192"));
 			this.cipherAlgoBox.AppendText (global::Mono.Unix.Catalog.GetString ("aes256"));
 			this.cipherAlgoBox.Name = "cipherAlgoBox";
