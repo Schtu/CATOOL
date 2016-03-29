@@ -233,6 +233,10 @@ namespace catoolgui
 			callProc("/usr/bin/openssl","rsa -in " + path +" -check -passin pass:" + pass + " -noout", "readkey Cert");
 		}
 
+		public static void checkImportReq(string path){
+			callProc ("/usr/bin/openssl", "req -text -noout -verify -in " + path, "Check REQ: " + path);
+		}
+
 		//Funktion zur Ausführung eines Bash Scripts
 
 		public static void runScript(string path){

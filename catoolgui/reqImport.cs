@@ -28,20 +28,29 @@ namespace catoolgui
 
 		protected void OnButtonOkClicked (object sender, EventArgs e)
 		{
+
 			try{
 			if (reqChooser.Filename != null) {
 
 				/*Füge den importierten Request der Datenbank hinzu und copiere diesen in den
 				 * importedReq Ordner. Anschließen laden den reqStore neu.*/
 
-				insertImportedReq ();
-				caHandling.callProc ("/bin/cp", reqChooser.Filename + " " + firstSetup.mainDir + "/" +
-				mainWindow.selectedCA + "-ca/importedReqs/", "REQ: " + mainWindow.importedReqName + " imported");
-				mainWindow.clearREQStore ();
-				mainWindow.clearREQInfoStore ();
-				reqLoad ();
-				mWin = new msgWindow("Request: " + getFilename() + " imported","succes");
-				this.Destroy ();
+				caHandling.checkImportReq(reqChooser.Filename);
+
+				if(!caHandling.lastLine.Contains("error:0906D06C"))
+					{
+					insertImportedReq ();
+					caHandling.callProc ("/bin/cp", reqChooser.Filename + " " + firstSetup.mainDir + "/" +
+					mainWindow.selectedCA + "-ca/importedReqs/", "REQ: " + mainWindow.importedReqName + " imported");
+					mainWindow.clearREQStore ();
+					mainWindow.clearREQInfoStore ();
+					reqLoad ();
+					mWin = new msgWindow("Request: " + getFilename() + " imported","succes");
+					this.Destroy ();
+					}
+					else{
+						mWin = new msgWindow ("Request: " + getFilename() + " must be in PEM-Format","error");
+					}
 			} else {
 				mWin = new msgWindow ("No Request for import selected", "error");
 			}
