@@ -16,10 +16,12 @@ namespace catoolgui
 		reqImport imWin;
 		crlScript crlWin;
 		genCRL crlGenWin;
+		viewLog logWin;
 		static revokeCert rvWin;
 		public static String selectedCA="", deletedCA = "",  selectedCert = "",
-		selectedCertNum="", selectedCertPath = "",importedReqPath = "", importedReqName="";
+		selectedCertNum="", selectedCertPath = "",importedReqPath = "", importedReqName="", certState="";
 		public int checkCaNum;
+
 
 		static ListStore  reqStore,usedreqStore,certStore;
 		static TreeStore caStore,reqInfoStore,usedreqInfoStore,certInfoStore;
@@ -29,6 +31,9 @@ namespace catoolgui
 		CellRendererText cellRend;
 		TreeIter iter,caIter,reqInfoIter,certInfoIter;
 		TreeModel model;
+
+		Menu contextMenu;
+		MenuItem contextItem;
 
 		public static certParser parser = new certParser();
 
@@ -296,7 +301,7 @@ namespace catoolgui
 
 		protected void OnViewLogfileActionActivated (object sender, EventArgs e)
 		{
-			viewLog logWin = new viewLog ();
+			logWin = new viewLog (firstSetup.mainDir + "/log.txt",false);
 		}
 
 		protected void OnExitActionActivated (object sender, EventArgs e)
@@ -529,7 +534,9 @@ namespace catoolgui
 
 			if (selection.GetSelected (out model, out iter)) {
 
-				if (certStore.GetValue (iter, 2).ToString ().Equals ("R")) {
+				certState = certStore.GetValue (iter, 2).ToString ();
+
+				if (certState.Equals ("R")) {
 					revokeCert.Sensitive = false;
 					exportCert.Sensitive = false;
 				}
@@ -584,6 +591,109 @@ namespace catoolgui
 					certInfoStore.AppendValues (certInfoIter, "SubjectAltName", i);
 				}
 			}
+		}
+
+		[GLib.ConnectBefore]
+		protected void OnCertTreeViewButtonPressEvent (object o, ButtonPressEventArgs args)
+		{
+			if (args.Event.Button == 3 && !selectedCertPath.Equals ("")) {
+				certContextMenu ();
+
+			}
+		}
+
+		void certContextMenu()
+		{
+			contextMenu = new Menu ();
+
+			contextItem = new MenuItem ("Details");
+			contextItem.Activated += OnDetailsCertActionActivated;
+			contextMenu.Add (contextItem);
+
+			contextItem = new MenuItem ("Revoke");
+			contextItem.Activated += OnRevokeCertClicked;
+			contextMenu.Add (contextItem);
+			if (certState.Equals ("R"))
+			contextItem.Sensitive = false;
+			        
+			contextItem = new MenuItem ("Delete");
+			contextItem.Activated += OnDelCertClicked;
+			contextMenu.Add (contextItem);
+
+			contextItem = new MenuItem ("Export");
+			contextItem.Activated += OnExportCertClicked;
+			contextMenu.Add (contextItem);
+			if (certState.Equals ("R"))
+			contextItem.Sensitive = false;
+
+			contextMenu.ShowAll();
+			contextMenu.Popup();
+		}
+			
+		protected void OnDetailsCertActionActivated (object sender, EventArgs e)
+		{
+			logWin = new viewLog (selectedCertPath, true);
+			logWin.Title = "X.509 Certificate";
+		}
+
+
+		[GLib.ConnectBefore]
+		protected void OnReqTreeViewButtonPressEvent (object o, ButtonPressEventArgs args)
+		{
+			if (args.Event.Button == 3 && !importedReqPath.Equals("")) {
+				reqContextMenu ();
+			}
+		}
+
+		void reqContextMenu(){
+			contextMenu = new Menu ();
+
+			contextItem = new MenuItem ("Details");
+			contextItem.Activated += OnDetailsReqActionActivated;
+			contextMenu.Add (contextItem);
+
+			contextItem = new MenuItem ("Delete");
+			contextItem.Activated += OnDeleteimportedReqClicked;
+			contextMenu.Add (contextItem);
+
+			contextMenu.ShowAll();
+			contextMenu.Popup();
+		}
+
+		protected void OnDetailsReqActionActivated (object sender, EventArgs e)
+		{
+			string s;
+
+			caHandling.startBash ("openssl req -in " + importedReqPath + " -text", "readreq");
+			s = caHandling.getInfo;
+
+			logWin = new viewLog (s);
+			logWin.Title = "Request";
+		}
+
+		[GLib.ConnectBefore]
+		protected void OnCaTreeViewButtonPressEvent (object o, ButtonPressEventArgs args)
+		{
+			if (args.Event.Button == 3) {
+				caContextMenu ();
+			}
+		}
+
+		void caContextMenu(){
+			contextMenu = new Menu ();
+
+			contextItem = new MenuItem ("Details");
+			contextItem.Activated += OnDetailsCAActionActivated;
+			contextMenu.Add (contextItem);
+
+			contextMenu.ShowAll();
+			contextMenu.Popup();
+		}
+
+		protected void OnDetailsCAActionActivated (object sender, EventArgs e)
+		{
+			logWin = new viewLog (firstSetup.mainDir + "/" + selectedCA + "-ca/certs/1000.pem", true);
+			logWin.Title = "CA-Certificate";
 		}
 	}
 }

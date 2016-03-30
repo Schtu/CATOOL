@@ -6,13 +6,21 @@ namespace catoolgui
 	public partial class viewLog : Gtk.Dialog
 	{
 		msgWindow mWin;
-
-		public viewLog ()
+		string logText,certText;
+		public viewLog (string path, bool cert)
 		{
 			this.Build ();
 			try{
-			string logText = File.ReadAllText (firstSetup.mainDir + "/log.txt");
-			logView.Buffer.Text = logText;
+				if(cert){
+					using (StreamReader sr = new StreamReader (path)){
+						certText = sr.ReadToEnd();
+						logView.Buffer.Text = certText;
+					}
+				}
+				else{
+					logText = File.ReadAllText (path);
+					logView.Buffer.Text = logText;
+				}
 			}
 			catch(FileNotFoundException e1){
 				mWin = new msgWindow (e1.Message, "error");
@@ -22,6 +30,11 @@ namespace catoolgui
 				mWin = new msgWindow (e2.Message, "error");
 				this.Destroy ();
 			}
+		}
+
+		public viewLog(string text){
+			this.Build ();
+			logView.Buffer.Text = text;
 		}
 
 		protected void OnButtonCancelClicked (object sender, EventArgs e)

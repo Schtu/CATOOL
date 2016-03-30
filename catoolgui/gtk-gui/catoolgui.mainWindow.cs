@@ -245,7 +245,7 @@ namespace catoolgui
 			this.mainNotebook = new global::Gtk.Notebook ();
 			this.mainNotebook.Sensitive = false;
 			this.mainNotebook.Name = "mainNotebook";
-			this.mainNotebook.CurrentPage = 2;
+			this.mainNotebook.CurrentPage = 0;
 			this.mainNotebook.EnablePopup = true;
 			// Container child mainNotebook.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
@@ -545,11 +545,14 @@ namespace catoolgui
 			this.createCAButton.Clicked += new global::System.EventHandler (this.OnCreateCAButtonClicked);
 			this.exportCA.Clicked += new global::System.EventHandler (this.OnExportCAClicked);
 			this.publishCRL.Clicked += new global::System.EventHandler (this.OnPublishCRLClicked);
+			this.caTreeView.ButtonPressEvent += new global::Gtk.ButtonPressEventHandler (this.OnCaTreeViewButtonPressEvent);
 			this.reqTreeView.CursorChanged += new global::System.EventHandler (this.OnReqTreeViewCursorChanged);
+			this.reqTreeView.ButtonPressEvent += new global::Gtk.ButtonPressEventHandler (this.OnReqTreeViewButtonPressEvent);
 			this.importButton.Clicked += new global::System.EventHandler (this.OnImportButtonClicked);
 			this.deleteimportedReq.Clicked += new global::System.EventHandler (this.OnDeleteimportedReqClicked);
 			this.createCertfromReqButton.Clicked += new global::System.EventHandler (this.OnCreateCertfromReqButtonClicked);
 			this.certTreeView.CursorChanged += new global::System.EventHandler (this.OnCertTreeViewCursorChanged);
+			this.certTreeView.ButtonPressEvent += new global::Gtk.ButtonPressEventHandler (this.OnCertTreeViewButtonPressEvent);
 			this.createCert2.Clicked += new global::System.EventHandler (this.OnCreateCert2Clicked);
 			this.revokeCert.Clicked += new global::System.EventHandler (this.OnRevokeCertClicked);
 			this.exportCert.Clicked += new global::System.EventHandler (this.OnExportCertClicked);
