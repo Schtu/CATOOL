@@ -593,6 +593,8 @@ namespace compactCA
 			}
 		}
 
+		//Kontext Menüs
+
 		[GLib.ConnectBefore]
 		protected void OnCertTreeViewButtonPressEvent (object o, ButtonPressEventArgs args)
 		{
