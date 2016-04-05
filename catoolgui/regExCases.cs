@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace catoolgui
+namespace compactCA
 {
 	public class regExCases
 	{

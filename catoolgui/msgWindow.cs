@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class msgWindow : Gtk.Dialog
 	{

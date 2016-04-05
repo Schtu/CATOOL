@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class exportCACert : Gtk.Dialog
 	{

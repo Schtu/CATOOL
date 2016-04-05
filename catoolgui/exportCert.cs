@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using Mono.Data.Sqlite;
 using Gtk;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class exportCert : Gtk.Dialog
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using Gtk;
 
-namespace catoolgui
+namespace compactCA
 {
 	class MainClass
 	{

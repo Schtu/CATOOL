@@ -1,11 +1,11 @@
 ﻿using System;
-using catoolgui;
+using compactCA;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using Mono.Data.Sqlite;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class createNewCA : Gtk.Window
 	{
@@ -145,12 +145,19 @@ namespace catoolgui
 
 				//Bei Errormeldung durch Openssl wird das aktuelle Verzeichnis komplett gelöscht
 
+
 				if (!caHandling.lastLine.Contains ("error")) {
 					mainWindow.selectedCA = NameCA.Text;
 					mainWindow.clearCAStore ();
 					mainWindow.clearREQStore ();
 					mainWindow.clearCertStore ();
+					try{
 					insertIntoCA ();
+					}
+					catch(SqliteException ex){
+						mWindow = new msgWindow (ex.Message,"error");
+						return;
+					}
 					loadCA ();
 					mWindow = new msgWindow ("CA: " + NameCA.Text + " was created", "success");
 				} else {
@@ -162,6 +169,8 @@ namespace catoolgui
 			else {
 				mWindow = new msgWindow (errList,"error");
 			}
+
+			
 		}
 
 		protected void cancelClicked (object sender, EventArgs e)

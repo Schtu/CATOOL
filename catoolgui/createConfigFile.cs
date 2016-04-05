@@ -6,7 +6,7 @@ using IniParser.Exceptions;
 using IniParser.Model;
 using IniParser.Parser;
 
-namespace catoolgui
+namespace compactCA
 {
 	public class createConfigFile
 	{

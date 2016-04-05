@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class viewLog : Gtk.Dialog
 	{

@@ -2,7 +2,7 @@
 using System.IO;
 using Mono.Data.Sqlite;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class reqImport : Gtk.Dialog
 	{

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class createCert : Gtk.Window
 	{

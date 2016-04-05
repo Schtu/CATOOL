@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class createNewRequest : Gtk.Window
 	{

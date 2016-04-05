@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 
-namespace catoolgui
+namespace compactCA
 {
 	public class caHandling
 	{

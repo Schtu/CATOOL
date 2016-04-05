@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace catoolgui
+namespace compactCA
 {
 	public class createExtFile
 	{

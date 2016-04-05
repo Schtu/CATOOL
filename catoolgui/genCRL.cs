@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class genCRL : Gtk.Dialog
 	{

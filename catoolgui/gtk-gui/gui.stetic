@@ -8,9 +8,9 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
     <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
-    <widget-library name="../bin/Debug/catoolgui.exe" internal="true" />
+    <widget-library name="../bin/Release/catoolgui.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="catoolgui.createNewCA" design-size="452 616">
+  <widget class="Gtk.Window" id="compactCA.createNewCA" design-size="452 616">
     <property name="MemberName" />
     <property name="CanDefault">True</property>
     <property name="HasDefault">True</property>
@@ -817,7 +817,7 @@ sha512</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="catoolgui.mainWindow" design-size="690 414">
+  <widget class="Gtk.Window" id="compactCA.mainWindow" design-size="690 414">
     <action-group name="Default">
       <action id="ProgramAction">
         <property name="Type">Action</property>
@@ -920,7 +920,7 @@ sha512</property>
       </action>
     </action-group>
     <property name="MemberName" />
-    <property name="Title" translatable="yes">CA TOOL</property>
+    <property name="Title" translatable="yes">compactCA</property>
     <property name="WindowPosition">Center</property>
     <property name="Gravity">Center</property>
     <child>
@@ -3647,7 +3647,7 @@ certificateHold</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="catoolgui.viewLog" design-size="738 497">
+  <widget class="Gtk.Dialog" id="compactCA.viewLog" design-size="738 497">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Logfile</property>
     <property name="WindowPosition">CenterOnParent</property>

@@ -3,7 +3,7 @@ using Mono.Data.Sqlite;
 using Gtk;
 using System.IO;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class mainWindow : Gtk.Window
 	{
@@ -444,7 +444,7 @@ namespace catoolgui
 		protected void OnDelCertClicked (object sender, EventArgs e)
 		{
 			if (!selectedCertNum.Equals ("")) {
-				rvWin = new catoolgui.revokeCert (selectedCertPath, selectedCertNum, selectedCert,stateLoadCert, true);
+				rvWin = new compactCA.revokeCert (selectedCertPath, selectedCertNum, selectedCert,stateLoadCert, true);
 			}
 		}
 

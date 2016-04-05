@@ -1,7 +1,7 @@
 ﻿using System;
 using Mono.Data.Sqlite;
 
-namespace catoolgui
+namespace compactCA
 {
 	public partial class revokeCert : Gtk.Dialog
 	{
