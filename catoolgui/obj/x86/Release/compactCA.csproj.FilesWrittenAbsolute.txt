@@ -1,0 +1,7 @@
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Release/catoolgui.gtk-gui.gui.stetic
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Release/catoolgui.exe.mdb
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Release/catoolgui.exe
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Release/catoolgui.exe
+/home/schtu/CATOOL/catoolgui/catoolgui/obj/x86/Release/catoolgui.exe.mdb
+/home/schtu/CATOOL/catoolgui/catoolgui/bin/Release/INIFileParser.dll
